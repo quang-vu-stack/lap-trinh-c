@@ -1,0 +1,4244 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0b152c">
+<meta name="description" content="C Academy — 34 bài học, 238 bài tập và 68 câu hỏi lập trình C từ cơ bản tới nâng cao.">
+<title>C Academy — Học lập trình C từ Zero đến Pro</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+:root{--bg:#f6f8fc;--surface:#fff;--surface2:#f0f4fb;--ink:#17243b;--muted:#738096;--line:#e7edf4;--blue:#5767e8;--blue2:#7886fb;--nav:#101b31;--sidebar:#fff;--shadow:0 10px 35px rgba(33,53,89,.045);--radius:17px;--success:#0ca678;--warning:#ffb454}
+:root[data-theme="dark"]{--bg:#0b1220;--surface:#131e32;--surface2:#182640;--ink:#edf2ff;--muted:#9aa8bf;--line:#293853;--blue:#8090ff;--blue2:#a2afff;--sidebar:#111b2d;--shadow:none}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:'Be Vietnam Pro',system-ui,sans-serif;color:var(--ink);background:var(--bg);font-size:13px;line-height:1.68}button,input,textarea,select{font:inherit}button{cursor:pointer}a{color:inherit;text-decoration:none}svg{display:block}button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid #8c9bff;outline-offset:2px}.layout{display:flex;min-height:100vh}.sidebar{width:248px;min-width:248px;position:fixed;inset:0 auto 0 0;z-index:20;background:var(--sidebar);border-right:1px solid var(--line);display:flex;flex-direction:column;padding:29px 16px 20px;overflow-y:auto}.brand{display:flex;gap:10px;align-items:center;margin:0 9px 37px;cursor:pointer}.brand-icon{display:grid;place-items:center;background:#5869ee;color:#fff;font-weight:800;font-family:'JetBrains Mono',monospace;letter-spacing:-2px;width:37px;height:37px;border-radius:12px;font-size:17px;box-shadow:0 9px 20px #5766e740}.brand strong{font-size:15px;letter-spacing:-.5px}.brand small{display:block;color:var(--muted);font-size:9px;letter-spacing:1.5px;font-weight:800;margin-top:-5px}.nav-label{font-size:10px;color:#96a2b5;letter-spacing:1.35px;font-weight:800;margin:18px 12px 10px}.nav-item{background:none;border:0;text-align:left;width:100%;color:var(--muted);display:flex;align-items:center;gap:12px;border-radius:11px;padding:11px 13px;margin-bottom:3px;font-weight:600;transition:.2s}.nav-item:hover{background:var(--surface2);color:var(--ink)}.nav-item.active{background:#eef0ff;color:#5360d9}.nav-icon{width:20px;font-size:17px;text-align:center;font-weight:600}.nav-item .nav-count{margin-left:auto;font-size:10px;color:#9ba7b9}.side-bottom{margin-top:auto;padding:20px 3px 0}.side-goal{border:1px solid var(--line);border-radius:14px;padding:15px;background:var(--surface2)}.side-goal-title{font-size:11px;font-weight:700;display:flex;justify-content:space-between}.progress-bar{height:7px;background:#dfe5f4;border-radius:100px;overflow:hidden;margin:13px 0 9px}.progress-fill{height:100%;background:linear-gradient(90deg,#7182ff,#23d2b5);border-radius:100px;transition:width .4s}.side-goal small{font-size:10px;color:var(--muted)}.main{margin-left:248px;min-width:0;flex:1}.topbar{height:85px;display:flex;align-items:center;gap:20px;justify-content:space-between;padding:0 clamp(22px,3.5vw,59px);background:var(--surface);border-bottom:1px solid var(--line)}.breadcrumb{display:flex;gap:8px;align-items:center;white-space:nowrap;color:var(--muted);font-size:12px}.breadcrumb strong{color:var(--ink);font-weight:700}.top-right{display:flex;gap:15px;align-items:center}.search-box{display:flex;align-items:center;gap:8px;background:var(--surface2);padding:9px 13px;border-radius:11px;color:var(--muted);width:245px}.search-box input{border:none;outline:0;background:transparent;min-width:0;width:100%;color:var(--ink);font-size:11px}.icon-button{border:1px solid var(--line);background:var(--surface);border-radius:10px;padding:8px 10px;font-size:16px;color:var(--ink)}.profile{display:flex;align-items:center;gap:9px}.avatar{width:36px;height:36px;background:linear-gradient(135deg,#d2e0ff,#ded8ff);border-radius:11px;display:grid;place-items:center;font-size:19px}.profile strong{display:block;font-size:11px}.profile small{color:var(--muted);font-size:10px}.content{max-width:1480px;margin:auto;padding:30px clamp(22px,3.5vw,59px) 70px}.page-title{font-size:26px;letter-spacing:-1.15px;margin:0 0 5px;line-height:1.5;font-weight:800}.page-sub{color:var(--muted);margin:0 0 25px}.eyebrow{letter-spacing:1.65px;color:#9eacbf;font-size:10px;font-weight:800;text-transform:uppercase}.hero{min-height:238px;background:linear-gradient(111deg,#111b37 1%,#1b2850 62%,#263a75);border-radius:20px;padding:29px 34px;display:flex;justify-content:space-between;gap:16px;position:relative;overflow:hidden;color:white}.hero:before{content:"";position:absolute;right:-120px;top:-235px;width:530px;height:530px;border:1px solid #8396ff29;border-radius:50%;box-shadow:0 0 0 45px #6d80ec10,0 0 0 110px #6d80ec0a}.hero:after{content:"";position:absolute;right:215px;bottom:-120px;width:220px;height:220px;background:#5b72ee24;filter:blur(50px);border-radius:50%}.hero-copy{z-index:1;max-width:450px}.hero-badge{display:inline-block;background:#44588c80;color:#cdd5ff;border:1px solid #8498e538;padding:5px 12px;border-radius:50px;font-size:10px;font-weight:700}.hero h1{font-size:29px;line-height:1.35;letter-spacing:-1.15px;margin:15px 0 8px;font-weight:800}.hero p{margin:0;color:#b3c0e1;font-size:12px;line-height:1.9}.hero-actions{display:flex;gap:10px;margin-top:20px}.btn{border:0;border-radius:10px;padding:11px 15px;font-size:11px;font-weight:800;display:inline-flex;gap:8px;align-items:center;justify-content:center;transition:.2s;text-decoration:none}.btn:hover{transform:translateY(-1px);filter:brightness(1.04)}.btn-primary{background:#6477ff;color:#fff;box-shadow:0 6px 16px #5f6de92f}.btn-white{background:#fff;color:#4353c8}.btn-outline{border:1px solid var(--line);background:var(--surface);color:var(--ink)}.btn-glass{background:#ffffff13;color:#eff1ff;border:1px solid #b4c0f33d}.btn-success{background:#dcfaee;color:#087e59}.btn-sm{font-size:10px;padding:7px 11px;border-radius:8px}.hero-terminal{z-index:1;width:275px;align-self:center;background:#11192bbf;border:1px solid #5f76ba50;border-radius:15px;padding:14px;box-shadow:0 20px 35px #060f2e70;transform:rotate(3deg);flex-shrink:0}.terminal-head{display:flex;gap:5px;margin-bottom:13px;border-bottom:1px solid #ffffff16;padding-bottom:9px}.dot{width:7px;height:7px;border-radius:50%;background:#ff7980}.dot:nth-child(2){background:#ffcc66}.dot:nth-child(3){background:#53d1aa}.terminal-head span{color:#8193b9;margin-left:auto;font:9px 'JetBrains Mono'}.terminal-code{font:11px/2 'JetBrains Mono',monospace;color:#dce4fd;white-space:pre}.tok-blue{color:#8aa8ff}.tok-green{color:#5fd7b0}.tok-yellow{color:#ffcf84}.section-heading{display:flex;justify-content:space-between;align-items:center;margin:31px 0 14px;gap:12px}.section-heading h2{margin:0;font-size:16px;letter-spacing:-.5px}.text-link{border:0;background:none;color:var(--blue);font-weight:800;font-size:11px}.stats-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px;margin:20px 0}.stat{background:var(--surface);border:1px solid var(--line);padding:17px 18px;border-radius:15px;box-shadow:var(--shadow)}.stat-top{display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:11px;font-weight:600}.stat-icon{width:31px;height:31px;display:grid;place-items:center;border-radius:9px;background:#eff1ff;color:#6775f7;font-size:16px}.stat strong{font-size:25px;letter-spacing:-1px;line-height:1.8}.stat-foot{font-size:10px;color:var(--muted)}.muted{color:var(--muted)}.module-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}.module-card,.lesson-card,.exercise-card,.panel,.video-card{background:var(--surface);border:1px solid var(--line);border-radius:15px;box-shadow:var(--shadow)}.module-card{padding:19px;cursor:pointer;transition:.2s;min-height:170px}.module-card:hover,.exercise-card:hover,.lesson-card:hover{border-color:#8e9af3;transform:translateY(-2px)}.module-icon{display:grid;place-items:center;height:38px;width:38px;border-radius:12px;background:#eff1ff;color:#6b79eb;font-weight:800;font-size:13px}.module-top{display:flex;justify-content:space-between;align-items:center}.module-card h3{font-size:13px;margin:15px 0 3px}.module-card p{font-size:10px;color:var(--muted);margin:0}.module-meta{display:flex;justify-content:space-between;align-items:center;gap:5px;font-size:10px;color:var(--muted);margin-top:17px}.mini-track{height:5px;border-radius:10px;background:var(--surface2);overflow:hidden;margin-top:8px}.mini-track>i{display:block;height:100%;background:#7885ff;border-radius:10px}.layout-two{display:grid;grid-template-columns:minmax(0,1fr) 315px;gap:18px;align-items:start}.panel{padding:20px}.panel h3{margin:0 0 11px;font-size:14px}.panel p{color:var(--muted);font-size:11px;line-height:1.9}.activity{display:flex;gap:10px;align-items:center;padding:12px 0;border-bottom:1px solid var(--line)}.activity:last-child{border:0}.activity-icon{width:33px;height:33px;border-radius:10px;background:#f0f3ff;display:grid;place-items:center;color:#6878dd}.activity strong{display:block;font-size:11px}.activity small{display:block;color:var(--muted);font-size:10px}.activity button{margin-left:auto}.steps{display:flex;align-items:center;gap:9px;flex-wrap:wrap}.step-chip{display:inline-block;border-radius:30px;padding:6px 10px;background:var(--surface2);font-size:10px;font-weight:700;color:var(--muted)}.lesson-layout{display:grid;grid-template-columns:270px minmax(0,1fr);gap:18px}.lesson-sidebar{position:sticky;top:18px;max-height:calc(100vh - 40px);overflow-y:auto;padding:16px}.module-group{margin-bottom:16px}.module-group-label{font-size:10px;letter-spacing:.45px;color:var(--muted);font-weight:800;padding:10px 8px}.lesson-link{border:0;text-align:left;width:100%;padding:10px 9px;background:transparent;border-radius:10px;display:flex;align-items:center;gap:8px;color:var(--muted);font-size:11px}.lesson-link:hover{background:var(--surface2)}.lesson-link.active{background:#edf0ff;color:#5766dd;font-weight:800}.lesson-num{width:21px;height:21px;border-radius:7px;background:var(--surface2);display:grid;place-items:center;font:10px 'JetBrains Mono';flex-shrink:0}.lesson-link.active .lesson-num{background:#dce2ff}.lesson-body{padding:27px}.lesson-body h2{font-size:23px;line-height:1.4;margin:12px 0}.lesson-body h3{font-size:14px;margin:25px 0 12px}.concept-item{display:flex;align-items:flex-start;gap:10px;margin:11px 0;color:var(--ink);font-size:12px}.check-circle{background:#dff7ee;color:#169c75;border-radius:50%;width:18px;height:18px;display:grid;place-items:center;flex-shrink:0;font-weight:800;font-size:10px}.pill{font-size:9px;font-weight:800;display:inline-block;padding:4px 9px;border-radius:40px;background:#eef0ff;color:#6874dc}.pill.green{background:#def7ed;color:#159c78}.pill.orange{background:#fff2dd;color:#c88d2e}.pill.red{background:#ffe8e9;color:#d64d63}.lesson-detail-meta{display:flex;gap:9px;flex-wrap:wrap;align-items:center}.code-window{background:#0d1729;border:1px solid #25324b;color:#d8e1f5;border-radius:12px;overflow:hidden}.code-window pre{margin:0;white-space:pre-wrap;overflow-x:auto;padding:17px;font:11px/1.9 'JetBrains Mono',monospace;tab-size:4}.code-top{background:#16233b;color:#98acd2;border-bottom:1px solid #2b3953;display:flex;justify-content:space-between;padding:8px 14px;font:10px 'JetBrains Mono'}.warning{padding:13px 15px;border-radius:11px;background:#fff8e9;color:#996823;border:1px solid #f4e6c7;font-size:11px;margin:18px 0}.answer-card{padding:13px;border:1px solid var(--line);border-radius:10px;margin:10px 0;display:flex;align-items:center;gap:11px}.answer-card strong{font-size:11px;display:block}.answer-card small{font-size:10px;color:var(--muted)}.answer-card button{margin-left:auto}.filters{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:15px}.field{background:var(--surface);border:1px solid var(--line);padding:11px 12px;border-radius:10px;color:var(--ink);font-size:11px;min-height:40px}.filter-search{flex:1;min-width:180px}.exercise-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.exercise-card{padding:18px;cursor:pointer;display:flex;flex-direction:column;gap:8px}.exercise-card h3{font-size:13px;margin:0}.exercise-card p{margin:0;color:var(--muted);font-size:11px;line-height:1.75;min-height:43px}.exercise-meta{display:flex;justify-content:space-between;gap:8px;align-items:center;margin-top:auto}.exercise-id{font-family:'JetBrains Mono',monospace;color:#9aa6ba;font-size:10px}.filter-count{color:var(--muted);font-size:11px;margin:6px 0 16px}.lab-layout{display:grid;grid-template-columns:310px minmax(0,1fr);gap:15px;align-items:start}.lab-task{padding:22px}.lab-task h3{margin:11px 0;font-size:19px}.lab-task p{color:var(--muted);font-size:12px;line-height:1.9}.lab-task .info-box{background:var(--surface2);border-radius:10px;padding:12px;margin-top:16px;font-size:11px}.lab-right{min-width:0}.editor-toolbar{background:#17233a;border-bottom:1px solid #34445e;display:flex;align-items:center;gap:9px;padding:10px 13px;color:#b7c5e1;flex-wrap:wrap}.editor-toolbar strong{font:11px 'JetBrains Mono';margin-right:auto}.editor-toolbar button{border:1px solid #42516b;color:#dce4fc;background:#202f4c;border-radius:7px;padding:6px 9px;font-size:10px}.editor-wrapper{position:relative;display:flex;background:#0d1729;min-height:315px}.line-numbers{font:12px/22px 'JetBrains Mono';white-space:pre;color:#536786;padding:16px 7px 16px 13px;text-align:right;user-select:none;min-width:36px;overflow:hidden}.editor{display:block;flex:1;width:100%;height:340px;resize:vertical;color:#d3e3ff;border:0;outline:0;background:transparent;font:12px/22px 'JetBrains Mono';padding:16px 14px;tab-size:4;white-space:pre;overflow:auto}.terminal-output{margin-top:13px;padding:0;overflow:hidden}.output-content{background:#0d1729;color:#d0e2f2;min-height:111px;padding:16px 17px;font:11px/1.85 'JetBrains Mono';white-space:pre-wrap;word-break:break-word;margin:0}.stdin-box{width:100%;background:var(--surface2);border:1px solid var(--line);resize:vertical;min-height:55px;padding:10px 12px;color:var(--ink);border-radius:10px;font:11px/1.6 'JetBrains Mono';margin-top:8px}.notice{display:flex;gap:10px;align-items:flex-start;padding:12px 14px;background:var(--surface2);border:1px solid var(--line);border-radius:10px;font-size:10px;color:var(--muted)}.notice strong{color:var(--ink)}.hint-body{background:var(--surface2);padding:13px;border-radius:10px;margin-top:9px;font-size:11px}.quiz-card{padding:18px 21px;margin:0 0 12px}.quiz-card h3{font-size:12px;margin:0 0 11px;line-height:1.8}.option{border:1px solid var(--line);border-radius:9px;display:flex;align-items:center;gap:10px;padding:10px 12px;margin:7px 0;cursor:pointer;font-size:11px}.option:hover{background:var(--surface2)}.option:has(input:checked){border-color:#8a95ef;background:#eef1ff;color:#4c59bd}.option.correct{border-color:#44c49a!important;background:#e4f9f0!important;color:#067f5c!important}.option.wrong{border-color:#ec7c88!important;background:#ffeced!important;color:#bc344a!important}.quiz-feedback{padding:8px 12px;border-radius:8px;font-size:10px;background:var(--surface2);color:var(--muted);margin-top:9px}.video-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}.video-card{overflow:hidden}.video-thumb{width:100%;height:175px;background:linear-gradient(135deg,#1a2845,#3b5184);background-size:cover;background-position:center;display:grid;place-items:center;position:relative}.play-btn{width:52px;height:52px;border-radius:50%;background:#ffffffed;color:#334acc;border:0;font-size:19px;box-shadow:0 9px 35px #0004}.video-card-text{padding:16px}.video-card h3{font-size:13px;margin:8px 0}.video-card p{font-size:11px;color:var(--muted);min-height:44px;margin:0 0 12px}.video-frame{width:100%;aspect-ratio:16/9;border:0;background:#000;border-radius:12px}.notes-area{width:100%;resize:vertical;min-height:320px;background:var(--surface2);border:1px solid var(--line);padding:18px;border-radius:11px;color:var(--ink);line-height:1.9}.empty{padding:45px 15px;text-align:center;color:var(--muted);background:var(--surface);border:1px dashed var(--line);border-radius:13px}.empty span{font-size:30px;display:block}.toast{position:fixed;right:24px;bottom:23px;z-index:100;background:#18253d;color:white;padding:11px 16px;border-radius:12px;box-shadow:0 15px 35px #0002;max-width:340px;font-size:11px;pointer-events:none;opacity:0;transform:translateY(20px);transition:.25s}.toast.show{opacity:1;transform:translateY(0)}.mobile-toggle{display:none}.backdrop{display:none}.shortcut{border:1px solid #c5cce0;border-radius:5px;padding:1px 5px;font-size:9px;color:var(--muted)}.score-circle{width:108px;height:108px;border-radius:50%;display:grid;place-items:center;background:conic-gradient(#6575ff var(--pct),#e8ecf4 0);margin:auto}.score-inner{height:87px;width:87px;border-radius:50%;background:var(--surface);display:grid;place-items:center;align-content:center}.score-inner strong{font-size:24px}.code-description{font-size:10px;color:#8497bb;margin-top:4px}.video-big{max-width:650px;margin:0 auto}.quick-card{padding:16px 19px;background:var(--surface);border:1px solid var(--line);border-radius:13px;margin-top:11px}.quick-card strong{font-size:12px}.quick-card p{font-size:11px;color:var(--muted);margin:5px 0 0}.badge-ok{color:#17a579;font-weight:800}.btn:disabled{opacity:.48;cursor:wait}.small-divider{border:0;border-top:1px solid var(--line);margin:20px 0}.result-banner{padding:14px 18px;border-radius:12px;background:var(--surface2);font-size:11px;margin-bottom:16px}.pills{display:flex;gap:5px;flex-wrap:wrap}.kbd{background:var(--surface2);border:1px solid var(--line);padding:1px 4px;border-radius:4px;font-size:10px}.mobile-bottom{display:none}
+:root[data-theme="dark"] .nav-item.active,:root[data-theme="dark"] .lesson-link.active,:root[data-theme="dark"] .option:has(input:checked){background:#253259;color:#dce2ff}:root[data-theme="dark"] .stat-icon,:root[data-theme="dark"] .module-icon,:root[data-theme="dark"] .activity-icon{background:#27345a}:root[data-theme="dark"] .warning{background:#393322;color:#ffd38a;border-color:#64502f}:root[data-theme="dark"] .option.correct{background:#103a31!important;color:#91e5c8!important}:root[data-theme="dark"] .option.wrong{background:#45262c!important;color:#ffadb5!important}
+@media(max-width:1250px){.module-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.layout-two{grid-template-columns:minmax(0,1fr) 285px}.hero-terminal{width:225px}.sidebar{width:221px;min-width:221px}.main{margin-left:221px}}
+@media(max-width:1000px){.lesson-layout,.lab-layout,.layout-two{grid-template-columns:1fr}.lesson-sidebar{position:relative;top:0;max-height:230px}.hero-terminal{display:none}.stats-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.video-thumb{height:145px}}
+@media(max-width:720px){.sidebar{transform:translateX(-105%);transition:transform .25s;width:255px;min-width:255px;box-shadow:10px 0 25px #0c193522}.sidebar.open{transform:translateX(0)}.backdrop.open{display:block;position:fixed;inset:0;background:#050d1c9e;z-index:19}.main{margin-left:0}.mobile-toggle{display:block}.topbar{height:67px;padding:0 16px}.breadcrumb{font-size:11px}.profile,.search-box,.shortcut{display:none}.content{padding:21px 14px 80px}.hero{padding:22px;min-height:250px}.hero h1{font-size:25px}.stats-grid{gap:8px}.stat{padding:12px 13px}.stat strong{font-size:22px}.stat-top{font-size:10px}.module-grid,.exercise-grid,.video-grid{grid-template-columns:1fr}.module-card{min-height:auto}.lesson-body{padding:18px}.lesson-body h2{font-size:21px}.page-title{font-size:22px}.video-thumb{height:190px}.hero-actions{flex-wrap:wrap}.lab-task{padding:17px}.mobile-bottom{display:grid;position:fixed;bottom:0;left:0;right:0;height:59px;background:var(--surface);border-top:1px solid var(--line);grid-template-columns:repeat(5,1fr);z-index:18}.mobile-bottom button{border:none;background:transparent;color:var(--muted);font-size:9px;display:flex;flex-direction:column;justify-content:center;gap:2px;align-items:center}.mobile-bottom button.active{color:var(--blue);font-weight:800}.mobile-bottom b{font-size:16px}.toast{right:12px;bottom:75px;left:12px}.lesson-layout{gap:10px}}
+</style>
+</head>
+<body>
+<div class="layout">
+ <div class="backdrop" id="backdrop"></div>
+ <aside class="sidebar" id="sidebar"></aside>
+ <div class="main">
+   <header class="topbar"><button class="icon-button mobile-toggle" data-action="sidebar">☰</button><div class="breadcrumb"><span>Không gian học tập</span><span>›</span><strong id="breadcrumb">Tổng quan</strong></div><div class="top-right"><label class="search-box">⌕ <input id="globalSearch" placeholder="Tìm bài học, bài tập..." aria-label="Tìm bài học, bài tập"></label><span class="shortcut">Enter ↵</span><button class="icon-button" data-action="theme" title="Đổi giao diện" aria-label="Đổi giao diện">◐</button><div class="profile"><div class="avatar">👨🏻‍💻</div><div><strong>Học viên C</strong><small>Chinh phục từ zero</small></div></div></div></header>
+   <main class="content" id="app" aria-live="polite"></main>
+ </div>
+</div>
+<div class="mobile-bottom" id="mobileBottom"></div>
+<div class="toast" id="toast"></div>
+<script id="content-data" type="application/json">{
+  "modules": [
+    {
+      "id": 0,
+      "title": "Nhập môn C",
+      "subtitle": "Bắt đầu từ con số 0",
+      "number": "01",
+      "color": "mint"
+    },
+    {
+      "id": 1,
+      "title": "Điều kiện & vòng lặp",
+      "subtitle": "Viết chương trình có logic",
+      "number": "02",
+      "color": "blue"
+    },
+    {
+      "id": 2,
+      "title": "Hàm & tư duy thuật toán",
+      "subtitle": "Chia nhỏ bài toán",
+      "number": "03",
+      "color": "violet"
+    },
+    {
+      "id": 3,
+      "title": "Mảng & chuỗi",
+      "subtitle": "Xử lý dữ liệu nhiều phần tử",
+      "number": "04",
+      "color": "pink"
+    },
+    {
+      "id": 4,
+      "title": "Con trỏ & bộ nhớ",
+      "subtitle": "Hiểu cách C quản lý RAM",
+      "number": "05",
+      "color": "orange"
+    },
+    {
+      "id": 5,
+      "title": "Kiểu dữ liệu & tệp",
+      "subtitle": "Tổ chức và lưu trữ dữ liệu",
+      "number": "06",
+      "color": "cyan"
+    },
+    {
+      "id": 6,
+      "title": "Cấu trúc dữ liệu",
+      "subtitle": "Thuật toán trên dữ liệu thực",
+      "number": "07",
+      "color": "green"
+    },
+    {
+      "id": 7,
+      "title": "C nâng cao",
+      "subtitle": "Những kỹ thuật chuyên sâu",
+      "number": "08",
+      "color": "red"
+    },
+    {
+      "id": 8,
+      "title": "Dự án thực tế",
+      "subtitle": "Tự tay xây dựng sản phẩm",
+      "number": "09",
+      "color": "gold"
+    }
+  ],
+  "lessons": [
+    {
+      "id": 0,
+      "module": 0,
+      "title": "Lệnh đầu tiên Hello World",
+      "level": "Dễ",
+      "summary": "Hiểu cấu trúc chương trình C, hàm main và cách biên dịch.",
+      "concepts": [
+        "#include đưa thư viện vào",
+        "main là điểm bắt đầu thực thi",
+        "printf in văn bản",
+        "return 0 báo chương trình kết thúc thành công."
+      ],
+      "pitfall": "Quên dấu chấm phẩy ; hoặc viết sai #include.",
+      "code": "#include <stdio.h>\n\nint main(void) {\n    printf(\"Xin chao, C Academy!\\n\");\n    return 0;\n}",
+      "duration": 12,
+      "video": "vpqMmfkSAMo"
+    },
+    {
+      "id": 1,
+      "module": 0,
+      "title": "Biến và kiểu dữ liệu",
+      "level": "Dễ",
+      "summary": "Làm quen int, float, double, char và quy tắc đặt tên biến.",
+      "concepts": [
+        "int chứa số nguyên",
+        "double chứa số thực với độ chính xác thường cao hơn float",
+        "char chứa một ký tự",
+        "const hạn chế thay đổi giá trị."
+      ],
+      "pitfall": "In số thực với %d thay vì %f hoặc chưa khởi tạo biến.",
+      "code": "#include <stdio.h>\n\nint main(void) {\n    int tuoi = 19;\n    double chieuCao = 1.70;\n    char kyTu = 'C';\n    printf(\"Tuoi: %d, cao: %.2f m, mon: %c\\n\", tuoi, chieuCao, kyTu);\n    return 0;\n}",
+      "duration": 16,
+      "video": "vpqMmfkSAMo"
+    },
+    {
+      "id": 2,
+      "module": 0,
+      "title": "Nhập xuất printf và scanf",
+      "level": "Dễ",
+      "summary": "Đọc dữ liệu do người dùng nhập, hiển thị kết quả có định dạng.",
+      "concepts": [
+        "printf dùng đặc tả %d %f %c %s",
+        "scanf với số thường cần & trước biến",
+        "scanf cho chuỗi char[] không dùng &",
+        "dấu cách và xuống dòng thuộc dữ liệu nhập."
+      ],
+      "pitfall": "Nhập %lf cho double; không dùng %f trong scanf với double.",
+      "code": "#include <stdio.h>\n\nint main(void) {\n    int a, b;\n    printf(\"Nhap hai so: \");\n    if (scanf(\"%d %d\", &a, &b) != 2) return 1;\n    printf(\"Tong = %d\\n\", a + b);\n    return 0;\n}",
+      "duration": 20,
+      "video": "vpqMmfkSAMo"
+    },
+    {
+      "id": 3,
+      "module": 0,
+      "title": "Toán tử và biểu thức",
+      "level": "Dễ",
+      "summary": "Sử dụng + - * / %, toán tử so sánh và ép kiểu.",
+      "concepts": [
+        "Chia số nguyên bỏ phần thập phân",
+        "% chỉ dùng cho kiểu nguyên",
+        "ép kiểu (double) thay đổi cách tính",
+        "++, -- tăng giảm một đơn vị."
+      ],
+      "pitfall": "Tính trung bình int mà quên ép kiểu sang double.",
+      "code": "#include <stdio.h>\n\nint main(void) {\n    int a = 7, b = 2;\n    printf(\"Chia nguyen: %d\\n\", a / b);\n    printf(\"Chia thuc: %.2f\\n\", (double)a / b);\n    return 0;\n}",
+      "duration": 24,
+      "video": "vpqMmfkSAMo"
+    },
+    {
+      "id": 4,
+      "module": 1,
+      "title": "Rẽ nhánh if else",
+      "level": "Dễ",
+      "summary": "Viết chương trình lựa chọn dựa trên điều kiện.",
+      "concepts": [
+        "if chạy nếu điều kiện đúng",
+        "else chạy khi sai",
+        "else if xử lý nhiều nhánh",
+        "&& và phép OR kết hợp điều kiện."
+      ],
+      "pitfall": "Dùng = thay vì == trong điều kiện; thiếu ngoặc nhọn khi nhiều lệnh.",
+      "code": "#include <stdio.h>\nint main(void) {\n    int n;\n    if (scanf(\"%d\", &n) != 1) return 1;\n    if (n > 0) printf(\"Duong\\n\");\n    else if (n < 0) printf(\"Am\\n\");\n    else printf(\"Bang 0\\n\");\n    return 0;\n}",
+      "duration": 12,
+      "video": "E9YQBP1yTfc"
+    },
+    {
+      "id": 5,
+      "module": 1,
+      "title": "Lựa chọn switch case",
+      "level": "Dễ",
+      "summary": "Dùng switch xử lý menu và nhiều giá trị nguyên riêng biệt.",
+      "concepts": [
+        "switch so sánh biểu thức nguyên hoặc char với case",
+        "break ngăn rơi xuống case sau",
+        "default bắt trường hợp khác."
+      ],
+      "pitfall": "Thiếu break gây fall-through ngoài ý muốn.",
+      "code": "#include <stdio.h>\nint main(void) {\n    int choice = 2;\n    switch (choice) {\n        case 1: puts(\"Them\"); break;\n        case 2: puts(\"Xem\"); break;\n        default: puts(\"Khong hop le\");\n    }\n    return 0;\n}",
+      "duration": 16,
+      "video": "E9YQBP1yTfc"
+    },
+    {
+      "id": 6,
+      "module": 1,
+      "title": "Vòng lặp for",
+      "level": "Dễ",
+      "summary": "Lặp có số lần xác định và sử dụng biến đếm.",
+      "concepts": [
+        "for(khởi_tạo",
+        "điều_kiện",
+        "cập_nhật) gồm ba phần",
+        "break thoát lặp",
+        "continue bỏ lượt hiện tại."
+      ],
+      "pitfall": "Vòng lặp vô hạn do điều kiện hoặc bước tăng sai.",
+      "code": "#include <stdio.h>\nint main(void) {\n    int sum = 0;\n    for (int i = 1; i <= 10; ++i) sum += i;\n    printf(\"Tong = %d\\n\", sum);\n    return 0;\n}",
+      "duration": 20,
+      "video": "E9YQBP1yTfc"
+    },
+    {
+      "id": 7,
+      "module": 1,
+      "title": "Vòng lặp while và do while",
+      "level": "Dễ",
+      "summary": "Lặp theo điều kiện chưa biết trước số lượt.",
+      "concepts": [
+        "while kiểm tra trước mỗi lượt",
+        "do while chạy ít nhất một lần",
+        "thường dùng khi nhập lại dữ liệu hoặc tách chữ số."
+      ],
+      "pitfall": "Quên thay đổi biến điều kiện khiến lặp vô hạn.",
+      "code": "#include <stdio.h>\nint main(void) {\n    int n = 1234, sum = 0;\n    while (n > 0) { sum += n % 10; n /= 10; }\n    printf(\"Tong chu so = %d\\n\", sum);\n    return 0;\n}",
+      "duration": 24,
+      "video": "E9YQBP1yTfc"
+    },
+    {
+      "id": 8,
+      "module": 2,
+      "title": "Hàm và tham số",
+      "level": "Trung bình",
+      "summary": "Chia chương trình thành các hàm có đầu vào và đầu ra.",
+      "concepts": [
+        "Hàm có kiểu trả về, tên, tham số",
+        "return trả giá trị",
+        "khai báo nguyên mẫu hàm trước main khi định nghĩa sau main."
+      ],
+      "pitfall": "Quên prototype hoặc không return ở hàm trả về giá trị.",
+      "code": "#include <stdio.h>\nint max2(int a, int b) { return a > b ? a : b; }\nint main(void) {\n    printf(\"Max: %d\\n\", max2(7, 10));\n    return 0;\n}",
+      "duration": 12,
+      "video": "E9YQBP1yTfc"
+    },
+    {
+      "id": 9,
+      "module": 2,
+      "title": "Phạm vi biến và const",
+      "level": "Trung bình",
+      "summary": "Phân biệt biến cục bộ, toàn cục, static và giá trị không đổi.",
+      "concepts": [
+        "Biến cục bộ chỉ sống trong khối",
+        "static cục bộ giữ giá trị giữa các lần gọi",
+        "const ngăn ghi qua tên biến",
+        "tránh global khi có thể."
+      ],
+      "pitfall": "Nhầm static cục bộ với biến tự động được khởi tạo lại.",
+      "code": "#include <stdio.h>\nint next_id(void) { static int id = 0; return ++id; }\nint main(void) {\n    const int limit = 3;\n    for (int i = 0; i < limit; ++i) printf(\"ID %d\\n\", next_id());\n    return 0;\n}",
+      "duration": 16,
+      "video": "E9YQBP1yTfc"
+    },
+    {
+      "id": 10,
+      "module": 2,
+      "title": "Đệ quy",
+      "level": "Trung bình",
+      "summary": "Giải bài toán bằng hàm tự gọi chính nó với điểm dừng.",
+      "concepts": [
+        "Mỗi hàm đệ quy cần trường hợp cơ sở",
+        "bước đệ quy đưa bài toán gần điểm dừng",
+        "số lượt gọi sâu có thể tràn stack."
+      ],
+      "pitfall": "Thiếu điều kiện dừng hoặc không giảm kích thước bài toán.",
+      "code": "#include <stdio.h>\nlong long factorial(int n) {\n    if (n <= 1) return 1;\n    return n * factorial(n - 1);\n}\nint main(void) {\n    printf(\"5! = %lld\\n\", factorial(5));\n    return 0;\n}",
+      "duration": 20,
+      "video": "E9YQBP1yTfc"
+    },
+    {
+      "id": 11,
+      "module": 2,
+      "title": "Bài toán số học",
+      "level": "Trung bình",
+      "summary": "Luyện tư duy giải thuật về số nguyên và ước số.",
+      "concepts": [
+        "Kiểm tra nguyên tố chỉ cần xét tới i*i<=n",
+        "GCD có thể dùng Euclid",
+        "thuật toán nhanh quan trọng hơn lặp nhiều."
+      ],
+      "pitfall": "Dùng int khi phép nhân có thể tràn.",
+      "code": "#include <stdio.h>\nint isPrime(int n) {\n    if (n < 2) return 0;\n    for (int i = 2; i <= n / i; i++)\n        if (n % i == 0) return 0;\n    return 1;\n}\nint main(void) { printf(\"%d\\n\", isPrime(29)); return 0; }",
+      "duration": 24,
+      "video": "E9YQBP1yTfc"
+    },
+    {
+      "id": 12,
+      "module": 3,
+      "title": "Mảng một chiều",
+      "level": "Trung bình",
+      "summary": "Lưu và duyệt các phần tử cùng kiểu trong một mảng.",
+      "concepts": [
+        "Chỉ số mảng từ 0 đến n-1",
+        "kích thước mảng cố định cần kiểm tra n",
+        "truy cập ngoài mảng là undefined behavior."
+      ],
+      "pitfall": "Chạy vòng lặp i<=n thay vì i<n.",
+      "code": "#include <stdio.h>\nint main(void) {\n    int a[] = {4, 8, 1, 9, 2};\n    int n = (int)(sizeof a / sizeof a[0]);\n    int max = a[0];\n    for (int i = 1; i < n; ++i) if (a[i] > max) max = a[i];\n    printf(\"Max = %d\\n\", max);\n    return 0;\n}",
+      "duration": 12,
+      "video": "xND0t1pr3KY"
+    },
+    {
+      "id": 13,
+      "module": 3,
+      "title": "Ma trận hai chiều",
+      "level": "Trung bình",
+      "summary": "Thao tác với dữ liệu dạng bảng hàng và cột.",
+      "concepts": [
+        "Khai báo int a[10][10]",
+        "hai chỉ số hàng/cột",
+        "duyệt bằng vòng lặp lồng nhau",
+        "phải kiểm tra kích thước đầu vào."
+      ],
+      "pitfall": "Đảo số hàng và số cột làm truy cập sai.",
+      "code": "#include <stdio.h>\nint main(void) {\n    int a[2][3] = {{1,2,3},{4,5,6}};\n    for (int i = 0; i < 2; ++i) {\n        for (int j = 0; j < 3; ++j) printf(\"%d \", a[i][j]);\n        putchar('\\n');\n    }\n    return 0;\n}",
+      "duration": 16,
+      "video": "xND0t1pr3KY"
+    },
+    {
+      "id": 14,
+      "module": 3,
+      "title": "Chuỗi ký tự",
+      "level": "Trung bình",
+      "summary": "Làm việc với chuỗi kết thúc bởi ký tự null \\0.",
+      "concepts": [
+        "Chuỗi C là mảng char kết thúc bởi '\\\\0'",
+        "fgets đọc cả khoảng trắng",
+        "strlen, strcmp, strcpy trong string.h cần giới hạn bộ đệm."
+      ],
+      "pitfall": "Dùng == để so sánh hai chuỗi thay vì strcmp.",
+      "code": "#include <stdio.h>\n#include <string.h>\nint main(void) {\n    char name[80];\n    if (!fgets(name, sizeof name, stdin)) return 1;\n    name[strcspn(name, \"\\n\")] = '\\0';\n    printf(\"Chao %s!\\n\", name);\n    return 0;\n}",
+      "duration": 20,
+      "video": "xND0t1pr3KY"
+    },
+    {
+      "id": 15,
+      "module": 3,
+      "title": "Ký tự và bảng mã",
+      "level": "Trung bình",
+      "summary": "Phân loại ký tự, sử dụng ASCII và ctype.h.",
+      "concepts": [
+        "isalpha, isdigit, isspace nhận giá trị unsigned char hợp lệ hoặc EOF",
+        "tolower/toupper đổi hoa thường",
+        "char không phải lúc nào có dấu."
+      ],
+      "pitfall": "Nhầm ký tự '0' với giá trị số 0.",
+      "code": "#include <stdio.h>\n#include <ctype.h>\nint main(void) {\n    char s[] = \"Hello C 2026\";\n    int count = 0;\n    for (int i = 0; s[i] != '\\0'; ++i)\n        if (isdigit((unsigned char)s[i])) ++count;\n    printf(\"Chu so: %d\\n\", count);\n    return 0;\n}",
+      "duration": 24,
+      "video": "xND0t1pr3KY"
+    },
+    {
+      "id": 16,
+      "module": 4,
+      "title": "Con trỏ cơ bản",
+      "level": "Khó",
+      "summary": "Hiểu địa chỉ, toán tử & và * cùng việc truy xuất dữ liệu.",
+      "concepts": [
+        "&x lấy địa chỉ",
+        "int *p trỏ tới int",
+        "*p đọc hoặc ghi đối tượng được trỏ",
+        "không dereference con trỏ NULL."
+      ],
+      "pitfall": "Sử dụng con trỏ chưa khởi tạo hoặc trỏ đến biến hết thời gian sống.",
+      "code": "#include <stdio.h>\nvoid swap(int *a, int *b) { int temp = *a; *a = *b; *b = temp; }\nint main(void) {\n    int x = 5, y = 8;\n    swap(&x, &y);\n    printf(\"%d %d\\n\", x, y);\n    return 0;\n}",
+      "duration": 12,
+      "video": "xND0t1pr3KY"
+    },
+    {
+      "id": 17,
+      "module": 4,
+      "title": "Con trỏ và mảng",
+      "level": "Khó",
+      "summary": "Khám phá phép toán con trỏ và mối quan hệ mảng - địa chỉ.",
+      "concepts": [
+        "a[i] tương đương *(a+i) trong truy cập phần tử",
+        "phép cộng con trỏ nhảy theo kích thước kiểu",
+        "không tự biết kích thước mảng khi truyền vào hàm."
+      ],
+      "pitfall": "Nhầm sizeof(a) trong hàm với kích thước mảng.",
+      "code": "#include <stdio.h>\nint sum(const int *a, int n) {\n    int total = 0;\n    for (const int *p = a; p < a+n; ++p) total += *p;\n    return total;\n}\nint main(void) {\n    int a[] = {1,2,3};\n    printf(\"%d\\n\", sum(a, 3));\n    return 0;\n}",
+      "duration": 16,
+      "video": "xND0t1pr3KY"
+    },
+    {
+      "id": 18,
+      "module": 4,
+      "title": "Con trỏ hàm",
+      "level": "Khó",
+      "summary": "Biết cách truyền hành vi qua địa chỉ hàm và callback.",
+      "concepts": [
+        "int (*op)(int,int) là con trỏ tới hàm nhận hai int và trả int",
+        "callback giúp tùy biến xử lý",
+        "qsort nhận hàm so sánh."
+      ],
+      "pitfall": "Viết sai dấu ngoặc trong khai báo con trỏ hàm.",
+      "code": "#include <stdio.h>\nint add(int a, int b) { return a + b; }\nint sub(int a, int b) { return a - b; }\nint apply(int a, int b, int (*op)(int,int)) { return op(a,b); }\nint main(void) {\n    printf(\"%d\\n\", apply(8, 3, sub));\n    return 0;\n}",
+      "duration": 20,
+      "video": "xND0t1pr3KY"
+    },
+    {
+      "id": 19,
+      "module": 4,
+      "title": "Cấp phát động",
+      "level": "Khó",
+      "summary": "Sử dụng malloc, calloc, realloc và free an toàn.",
+      "concepts": [
+        "malloc cấp phát byte và trả void*",
+        "calloc khởi tạo vùng nhớ thành 0",
+        "realloc có thể đổi địa chỉ",
+        "free giải phóng vùng nhớ",
+        "kiểm tra NULL."
+      ],
+      "pitfall": "Gọi free hai lần, dùng bộ nhớ sau free hoặc ghi đè p=realloc(p,...).",
+      "code": "#include <stdio.h>\n#include <stdlib.h>\nint main(void) {\n    int n = 5;\n    int *a = malloc((size_t)n * sizeof *a);\n    if (!a) return 1;\n    for (int i=0;i<n;++i) a[i]=i*i;\n    for (int i=0;i<n;++i) printf(\"%d \",a[i]);\n    free(a);\n    return 0;\n}",
+      "duration": 24,
+      "video": "xND0t1pr3KY"
+    },
+    {
+      "id": 20,
+      "module": 5,
+      "title": "Struct và cấu trúc dữ liệu",
+      "level": "Khó",
+      "summary": "Tập hợp thuộc tính thành một kiểu dữ liệu có tên.",
+      "concepts": [
+        "struct gom trường có thể khác kiểu",
+        "truy cập bằng dấu chấm hoặc -> với con trỏ",
+        "mảng struct lưu nhiều bản ghi."
+      ],
+      "pitfall": "Đọc chuỗi vào bộ đệm không giới hạn; so sánh struct bằng ==.",
+      "code": "#include <stdio.h>\ntypedef struct { int id; char name[40]; double gpa; } Student;\nint main(void) {\n    Student s = {1, \"An\", 3.75};\n    printf(\"%d %s %.2f\\n\", s.id, s.name, s.gpa);\n    return 0;\n}",
+      "duration": 12,
+      "video": "xND0t1pr3KY"
+    },
+    {
+      "id": 21,
+      "module": 5,
+      "title": "Enum typedef union",
+      "level": "Khó",
+      "summary": "Tạo kiểu dễ đọc, biểu diễn trạng thái và hiểu union.",
+      "concepts": [
+        "enum đặt tên cho các hằng nguyên",
+        "typedef tạo bí danh kiểu",
+        "union chia sẻ cùng một vùng nhớ giữa các thành viên."
+      ],
+      "pitfall": "Đọc thành viên union khác thành viên vừa ghi có thể không mang nghĩa mong muốn.",
+      "code": "#include <stdio.h>\ntypedef enum { TODO, DOING, DONE } Status;\nint main(void) {\n    Status s = DOING;\n    printf(\"Trang thai: %d\\n\", (int)s);\n    return 0;\n}",
+      "duration": 16,
+      "video": "xND0t1pr3KY"
+    },
+    {
+      "id": 22,
+      "module": 5,
+      "title": "Làm việc với tệp",
+      "level": "Khó",
+      "summary": "Đọc ghi dữ liệu bền vững bằng FILE*, fopen, fprintf, fscanf, fgets.",
+      "concepts": [
+        "fopen có thể trả NULL",
+        "chế độ r đọc, w ghi đè, a thêm",
+        "fclose đóng tệp",
+        "fgets giúp đọc từng dòng."
+      ],
+      "pitfall": "Quên kiểm tra fopen; đọc vượt EOF; dùng feof sai vòng lặp.",
+      "code": "#include <stdio.h>\nint main(void) {\n    FILE *f = fopen(\"hello.txt\", \"w\");\n    if (!f) { perror(\"fopen\"); return 1; }\n    fprintf(f, \"Hoc lap trinh C\\n\");\n    fclose(f);\n    puts(\"Da ghi file\");\n    return 0;\n}",
+      "duration": 20,
+      "video": "xND0t1pr3KY"
+    },
+    {
+      "id": 23,
+      "module": 5,
+      "title": "Tiền xử lý và header",
+      "level": "Khó",
+      "summary": "Tách mã nguồn thành nhiều tệp và hiểu macro trong C.",
+      "concepts": [
+        "#include chèn khai báo",
+        "#define định nghĩa macro",
+        "include guard tránh khai báo lặp",
+        "mã nguồn nhiều tệp biên dịch cùng nhau."
+      ],
+      "pitfall": "Macro có tham số mà không có dấu ngoặc dẫn tới ưu tiên toán tử sai.",
+      "code": "#include <stdio.h>\n#define SQUARE(x) ((x) * (x))\nint main(void) {\n    printf(\"%d\\n\", SQUARE(3 + 2));\n    return 0;\n}",
+      "duration": 24,
+      "video": "xND0t1pr3KY"
+    },
+    {
+      "id": 24,
+      "module": 6,
+      "title": "Tìm kiếm dữ liệu",
+      "level": "Khó",
+      "summary": "So sánh tìm tuyến tính với tìm nhị phân.",
+      "concepts": [
+        "Tìm tuyến tính O(n) không cần sắp xếp",
+        "tìm nhị phân O(log n) yêu cầu dữ liệu tăng dần",
+        "dùng mid=left+(right-left)/2."
+      ],
+      "pitfall": "Dùng binary search trên mảng chưa sắp xếp.",
+      "code": "#include <stdio.h>\nint binarySearch(const int *a,int n,int x) {\n    int lo=0,hi=n-1;\n    while(lo<=hi) {\n        int mid=lo+(hi-lo)/2;\n        if(a[mid]==x) return mid;\n        if(a[mid]<x) lo=mid+1; else hi=mid-1;\n    }\n    return -1;\n}\nint main(void) { int a[]={1,3,5,7}; printf(\"%d\\n\",binarySearch(a,4,5)); return 0; }",
+      "duration": 12,
+      "video": "xND0t1pr3KY"
+    },
+    {
+      "id": 25,
+      "module": 6,
+      "title": "Thuật toán sắp xếp",
+      "level": "Khó",
+      "summary": "Hiểu bubble sort, insertion sort, selection sort và qsort.",
+      "concepts": [
+        "Bubble/selection/insertion có độ phức tạp O(n²) nói chung",
+        "qsort của thư viện C có comparator",
+        "nên dùng đúng kiểu và tránh tràn."
+      ],
+      "pitfall": "Hàm so sánh qsort trả a-b có thể tràn khi số lớn.",
+      "code": "#include <stdio.h>\nint main(void) {\n    int a[]={5,1,4,2,8}; int n=5;\n    for(int i=0;i<n-1;i++)\n        for(int j=0;j<n-1-i;j++)\n            if(a[j]>a[j+1]) {int t=a[j];a[j]=a[j+1];a[j+1]=t;}\n    for(int i=0;i<n;i++) printf(\"%d \",a[i]);\n    return 0;\n}",
+      "duration": 16,
+      "video": "xND0t1pr3KY"
+    },
+    {
+      "id": 26,
+      "module": 6,
+      "title": "Danh sách liên kết",
+      "level": "Khó",
+      "summary": "Xây dựng các node nối nhau bằng con trỏ.",
+      "concepts": [
+        "Mỗi node chứa dữ liệu và con trỏ next",
+        "danh sách rỗng head=NULL",
+        "thêm/xóa phải cập nhật liên kết",
+        "giải phóng từng node khi kết thúc."
+      ],
+      "pitfall": "Mất head khi duyệt hoặc free node rồi truy cập node->next.",
+      "code": "#include <stdio.h>\n#include <stdlib.h>\ntypedef struct Node { int x; struct Node *next; } Node;\nint main(void) {\n    Node *head = malloc(sizeof *head);\n    if(!head) return 1;\n    head->x=42; head->next=NULL;\n    printf(\"%d\\n\",head->x);\n    free(head);\n    return 0;\n}",
+      "duration": 20,
+      "video": "xND0t1pr3KY"
+    },
+    {
+      "id": 27,
+      "module": 6,
+      "title": "Stack và queue",
+      "level": "Khó",
+      "summary": "Hiểu nguyên tắc LIFO, FIFO và cài đặt cơ bản.",
+      "concepts": [
+        "Stack LIFO (vào sau ra trước)",
+        "queue FIFO (vào trước ra trước)",
+        "dùng mảng hoặc danh sách liên kết",
+        "kiểm tra tràn và rỗng."
+      ],
+      "pitfall": "Đọc pop từ stack rỗng hoặc xóa sai chỉ số vòng.",
+      "code": "#include <stdio.h>\n#define CAP 10\nint main(void) {\n    int stack[CAP], top=-1;\n    stack[++top]=10; stack[++top]=20;\n    while(top>=0) printf(\"%d\\n\",stack[top--]);\n    return 0;\n}",
+      "duration": 24,
+      "video": "xND0t1pr3KY"
+    },
+    {
+      "id": 28,
+      "module": 7,
+      "title": "Toán tử bit",
+      "level": "Khó",
+      "summary": "Điều khiển bit bằng AND, OR, XOR, NOT, dịch bit.",
+      "concepts": [
+        "Các toán tử bit: &, |, ^, ~, << và >>",
+        "Bật bit k của unsigned x: x | (1u << k)",
+        "Tắt bit k: x & ~(1u << k)",
+        "Chỉ dịch k trong khoảng hợp lệ của kiểu unsigned."
+      ],
+      "pitfall": "Dịch bit quá bề rộng kiểu hoặc dịch số âm có hành vi không mong muốn.",
+      "code": "#include <stdio.h>\nint main(void) {\n    unsigned int flags = 0;\n    flags |= 1u << 2;\n    printf(\"Bit 2: %u\\n\", (flags >> 2) & 1u);\n    return 0;\n}",
+      "duration": 12,
+      "video": "xND0t1pr3KY"
+    },
+    {
+      "id": 29,
+      "module": 7,
+      "title": "Hàm callback và generic",
+      "level": "Khó",
+      "summary": "Viết code tái sử dụng với void*, hàm so sánh và API tổng quát.",
+      "concepts": [
+        "void* có thể mang địa chỉ nhiều loại đối tượng",
+        "cần ép đúng kiểu khi đọc",
+        "qsort/bsearch dùng comparator",
+        "tránh phép toán con trỏ void* chuẩn C."
+      ],
+      "pitfall": "Ép kiểu sai hoặc dùng sai kích thước sizeof dẫn tới lỗi bộ nhớ.",
+      "code": "#include <stdio.h>\n#include <stdlib.h>\nint cmp(const void *a,const void *b) {\n    int x=*(const int*)a,y=*(const int*)b;\n    return (x>y)-(x<y);\n}\nint main(void) {\n    int a[]={5,1,9,2};\n    qsort(a,4,sizeof a[0],cmp);\n    for(int i=0;i<4;++i) printf(\"%d \",a[i]);\n    return 0;\n}",
+      "duration": 16,
+      "video": "xND0t1pr3KY"
+    },
+    {
+      "id": 30,
+      "module": 7,
+      "title": "Kiểm lỗi và lập trình an toàn",
+      "level": "Khó",
+      "summary": "Xử lý sai đầu vào, giới hạn bộ đệm và cảnh báo trình biên dịch.",
+      "concepts": [
+        "Kiểm tra giá trị trả về scanf/fgets/fopen/malloc",
+        "giới hạn kích thước",
+        "dùng -Wall -Wextra -Wpedantic",
+        "phân biệt biên dịch thành công và kết quả đúng."
+      ],
+      "pitfall": "Bỏ qua cảnh báo; đọc vô hạn bằng %s; sử dụng biến chưa khởi tạo.",
+      "code": "#include <stdio.h>\n#include <stdlib.h>\n#include <errno.h>\nint main(void) {\n    char line[100], *end;\n    if (!fgets(line,sizeof line,stdin)) return 1;\n    errno=0;\n    long n = strtol(line,&end,10);\n    if (errno || end==line || (*end!='\\n' && *end!='\\0')) {\n        puts(\"Du lieu khong hop le\"); return 1;\n    }\n    printf(\"Ban nhap: %ld\\n\",n);\n    return 0;\n}",
+      "duration": 20,
+      "video": "xND0t1pr3KY"
+    },
+    {
+      "id": 31,
+      "module": 8,
+      "title": "Đồ án quản lý sinh viên",
+      "level": "Dự án",
+      "summary": "Kết hợp struct, mảng, hàm, tìm kiếm và lưu tệp.",
+      "concepts": [
+        "Thiết kế dữ liệu trước, sau đó tách xử lý theo hàm",
+        "lưu qua định dạng văn bản",
+        "xử lý nhập sai",
+        "kiểm thử thêm/xóa/sửa."
+      ],
+      "pitfall": "Chỉ làm giao diện menu mà chưa kiểm tra các thao tác thật.",
+      "code": "#include <stdio.h>\n#include <string.h>\ntypedef struct { int id; char name[40]; double gpa; } Student;\nint main(void) {\n    Student a[]={{1,\"An\",3.5},{2,\"Binh\",3.8}};\n    for(int i=0;i<2;i++) printf(\"%d | %s | %.1f\\n\",a[i].id,a[i].name,a[i].gpa);\n    return 0;\n}",
+      "duration": 24,
+      "video": "xND0t1pr3KY"
+    },
+    {
+      "id": 32,
+      "module": 8,
+      "title": "Đồ án quản lý thư viện",
+      "level": "Dự án",
+      "summary": "Quản lý sách và lượt mượn trả bằng cấu trúc dữ liệu.",
+      "concepts": [
+        "Định nghĩa Book(id,title,quantity)",
+        "mô hình trạng thái mượn",
+        "validate số lượng",
+        "lưu tệp và tải lại."
+      ],
+      "pitfall": "Cho mượn khi số lượng còn 0 hoặc nhập id trùng.",
+      "code": "#include <stdio.h>\ntypedef struct { int id; char title[60]; int stock; } Book;\nint main(void) {\n    Book b={101,\"Hoc ngon ngu C\",5};\n    if (b.stock>0) { --b.stock; puts(\"Muon thanh cong\"); }\n    return 0;\n}",
+      "duration": 12,
+      "video": "xND0t1pr3KY"
+    },
+    {
+      "id": 33,
+      "module": 8,
+      "title": "Ứng dụng cuối khóa C",
+      "level": "Dự án",
+      "summary": "Tự thiết kế, phát triển và kiểm thử một chương trình lớn bằng C.",
+      "concepts": [
+        "Lên yêu cầu, viết test, phân chia module, quản lý bộ nhớ và chuẩn bị hướng dẫn sử dụng",
+        "C chuẩn không có class/OOP gốc như C++."
+      ],
+      "pitfall": "Viết tất cả trong một hàm main khổng lồ; không dọn bộ nhớ.",
+      "code": "#include <stdio.h>\nint main(void) {\n    puts(\"=== TODO APP ===\");\n    puts(\"1. Them cong viec\");\n    puts(\"2. Xem danh sach\");\n    puts(\"0. Thoat\");\n    return 0;\n}",
+      "duration": 16,
+      "video": "xND0t1pr3KY"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "C01-01",
+      "lesson": 0,
+      "module": 0,
+      "title": "In Hello C",
+      "description": "Hiển thị dòng Hello C Academy",
+      "hint": "printf trong main",
+      "difficulty": "Dễ",
+      "points": 10,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C01-02",
+      "lesson": 0,
+      "module": 0,
+      "title": "In lời giới thiệu",
+      "description": "In tên, ngành học và mục tiêu của bạn trên ba dòng khác nhau",
+      "hint": "Dùng ký tự xuống dòng \\\\n",
+      "difficulty": "Dễ",
+      "points": 10,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C01-03",
+      "lesson": 0,
+      "module": 0,
+      "title": "Vẽ khung chữ",
+      "description": "Dùng printf vẽ hình chữ nhật bằng ký tự * gồm 4 hàng",
+      "hint": "Đếm từng dấu *",
+      "difficulty": "Vừa",
+      "points": 20,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C01-04",
+      "lesson": 0,
+      "module": 0,
+      "title": "In thông tin sinh viên",
+      "description": "In mã sinh viên, lớp và trường thành ba dòng",
+      "hint": "Chưa cần nhập bàn phím",
+      "difficulty": "Vừa",
+      "points": 20,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C01-05",
+      "lesson": 0,
+      "module": 0,
+      "title": "In bảng thời khóa biểu",
+      "description": "In thời khóa biểu 3 môn dưới dạng bảng chữ",
+      "hint": "Canh cột bằng khoảng trắng hoặc \\\\t",
+      "difficulty": "Vừa",
+      "points": 20,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C01-06",
+      "lesson": 0,
+      "module": 0,
+      "title": "Vẽ tam giác",
+      "description": "Vẽ tam giác cân 5 hàng bằng những lệnh printf độc lập",
+      "hint": "Mỗi hàng có số sao lẻ",
+      "difficulty": "Khó",
+      "points": 35,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C01-07",
+      "lesson": 0,
+      "module": 0,
+      "title": "Banner ứng dụng",
+      "description": "Tạo màn hình chào cho ứng dụng quản lý sinh viên, có tiêu đề và đường viền",
+      "hint": "Chỉ cần lệnh printf",
+      "difficulty": "Khó",
+      "points": 35,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C02-01",
+      "lesson": 1,
+      "module": 0,
+      "title": "Giới thiệu tuổi",
+      "description": "Khai báo int age và in tuổi ra màn hình",
+      "hint": "Dùng %d",
+      "difficulty": "Dễ",
+      "points": 10,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C02-02",
+      "lesson": 1,
+      "module": 0,
+      "title": "Chiều cao",
+      "description": "Cất chiều cao dạng mét trong double và in 2 chữ số thập phân",
+      "hint": "Dùng %.2f",
+      "difficulty": "Dễ",
+      "points": 10,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C02-03",
+      "lesson": 1,
+      "module": 0,
+      "title": "Một ký tự",
+      "description": "Lưu chữ cái đầu tên vào char và in bằng %c",
+      "hint": "Ký tự dùng nháy đơn",
+      "difficulty": "Vừa",
+      "points": 20,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C02-04",
+      "lesson": 1,
+      "module": 0,
+      "title": "Tính năm sinh",
+      "description": "Với tuổi và năm hiện tại, ước lượng năm sinh",
+      "hint": "Dùng hai biến int",
+      "difficulty": "Vừa",
+      "points": 20,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C02-05",
+      "lesson": 1,
+      "module": 0,
+      "title": "Hoán đổi không nhập",
+      "description": "Cho a=5,b=9, hoán đổi nhờ biến trung gian",
+      "hint": "Cần biến temp",
+      "difficulty": "Vừa",
+      "points": 20,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C02-06",
+      "lesson": 1,
+      "module": 0,
+      "title": "Đổi đơn vị",
+      "description": "Lưu 2.5 km và đổi ra mét",
+      "hint": "Số thực nhân 1000",
+      "difficulty": "Khó",
+      "points": 35,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C02-07",
+      "lesson": 1,
+      "module": 0,
+      "title": "Hóa đơn ba loại hàng",
+      "description": "Khai báo giá, số lượng và tổng tiền rồi in đủ thông tin",
+      "hint": "Lưu đơn giá dạng long long nếu cần",
+      "difficulty": "Khó",
+      "points": 35,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C03-01",
+      "lesson": 2,
+      "module": 0,
+      "title": "Chào tên",
+      "description": "Nhập tên một từ và in lời chào",
+      "hint": "Dùng char name[40] và %39s",
+      "difficulty": "Dễ",
+      "points": 10,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C03-02",
+      "lesson": 2,
+      "module": 0,
+      "title": "Tổng hai số",
+      "description": "Nhập hai số nguyên và in tổng",
+      "hint": "scanf với &a, &b",
+      "difficulty": "Dễ",
+      "points": 10,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C03-03",
+      "lesson": 2,
+      "module": 0,
+      "title": "Chu vi chữ nhật",
+      "description": "Nhập dài và rộng số thực, in chu vi 2 chữ số",
+      "hint": "Sử dụng double và %lf",
+      "difficulty": "Vừa",
+      "points": 20,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C03-04",
+      "lesson": 2,
+      "module": 0,
+      "title": "Tuổi năm sau",
+      "description": "Nhập tuổi hiện tại và in tuổi năm sau",
+      "hint": "age+1",
+      "difficulty": "Vừa",
+      "points": 20,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C03-05",
+      "lesson": 2,
+      "module": 0,
+      "title": "Bảng kết quả",
+      "description": "Nhập tên, điểm toán và điểm tin rồi in bảng",
+      "hint": "Sử dụng %.1f",
+      "difficulty": "Vừa",
+      "points": 20,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C03-06",
+      "lesson": 2,
+      "module": 0,
+      "title": "Tách chữ số",
+      "description": "Nhập số nguyên 3 chữ số, in ba chữ số từ trái qua phải",
+      "hint": "Chia nguyên và chia lấy dư",
+      "difficulty": "Khó",
+      "points": 35,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C03-07",
+      "lesson": 2,
+      "module": 0,
+      "title": "Đọc cả họ tên",
+      "description": "Cho phép nhập họ tên có khoảng trắng bằng fgets",
+      "hint": "Loại ký tự xuống dòng nếu cần",
+      "difficulty": "Khó",
+      "points": 35,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C04-01",
+      "lesson": 3,
+      "module": 0,
+      "title": "Máy tính bốn phép",
+      "description": "Nhập a,b, in cộng trừ nhân và thương dạng thực",
+      "hint": "Phải kiểm tra b khác 0",
+      "difficulty": "Dễ",
+      "points": 10,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C04-02",
+      "lesson": 3,
+      "module": 0,
+      "title": "Số chẵn lẻ",
+      "description": "In phần dư của n chia 2",
+      "hint": "Nhớ toán tử %",
+      "difficulty": "Dễ",
+      "points": 10,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C04-03",
+      "lesson": 3,
+      "module": 0,
+      "title": "Tổng chữ số 3 chữ số",
+      "description": "Nhập n từ 100 đến 999, tính tổng 3 chữ số",
+      "hint": "Chia lấy dư 10",
+      "difficulty": "Vừa",
+      "points": 20,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C04-04",
+      "lesson": 3,
+      "module": 0,
+      "title": "Đổi phút ra giờ",
+      "description": "Nhập tổng số phút, in h và phút dư",
+      "hint": "Chia 60 và lấy dư 60",
+      "difficulty": "Vừa",
+      "points": 20,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C04-05",
+      "lesson": 3,
+      "module": 0,
+      "title": "Celsius Fahrenheit",
+      "description": "Đổi C sang F theo F = C×9/5 +32/Dùng 9.0",
+      "hint": "5",
+      "difficulty": "Vừa",
+      "points": 20,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C04-06",
+      "lesson": 3,
+      "module": 0,
+      "title": "Tính tiền có VAT",
+      "description": "Nhập giá và VAT phần trăm, tính tổng cuối",
+      "hint": "Đổi % sang hệ số",
+      "difficulty": "Khó",
+      "points": 35,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C04-07",
+      "lesson": 3,
+      "module": 0,
+      "title": "Biểu thức phức hợp",
+      "description": "Nhập x, tính x^3+2x^2-5x+1",
+      "hint": "Không có toán tử lũy thừa",
+      "difficulty": "Khó",
+      "points": 35,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C05-01",
+      "lesson": 4,
+      "module": 1,
+      "title": "Chẵn hay lẻ",
+      "description": "In CHAN nếu n chia hết 2, ngược lại LE",
+      "hint": "n%2 == 0",
+      "difficulty": "Dễ",
+      "points": 10,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C05-02",
+      "lesson": 4,
+      "module": 1,
+      "title": "Dương âm không",
+      "description": "Nhập n và phân loại dương, âm, bằng 0",
+      "hint": "Dùng if else if else",
+      "difficulty": "Dễ",
+      "points": 10,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C05-03",
+      "lesson": 4,
+      "module": 1,
+      "title": "Số lớn nhất 3 số",
+      "description": "Nhập a,b,c và in max",
+      "hint": "So sánh từng cặp",
+      "difficulty": "Vừa",
+      "points": 20,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C05-04",
+      "lesson": 4,
+      "module": 1,
+      "title": "Năm nhuận",
+      "description": "Kiểm tra năm nhuận theo quy tắc chia hết 4,100,400",
+      "hint": "(y%400==0) || (y%4==0&&y%100!=0)",
+      "difficulty": "Vừa",
+      "points": 20,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C05-05",
+      "lesson": 4,
+      "module": 1,
+      "title": "Xếp loại học lực",
+      "description": "Điểm 0..10, xếp Giỏi Khá Trung bình Yếu",
+      "hint": "Kiểm tra dữ liệu hợp lệ",
+      "difficulty": "Vừa",
+      "points": 20,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C05-06",
+      "lesson": 4,
+      "module": 1,
+      "title": "Tam giác hợp lệ",
+      "description": "Nhập ba cạnh, kiểm tra tạo thành tam giác không",
+      "hint": "Tổng hai cạnh lớn hơn cạnh còn lại",
+      "difficulty": "Khó",
+      "points": 35,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C05-07",
+      "lesson": 4,
+      "module": 1,
+      "title": "Giá điện bậc thang",
+      "description": "Tính tiền điện theo ba mức do bạn chọn",
+      "hint": "Chia các nhánh ngưỡng",
+      "difficulty": "Khó",
+      "points": 35,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C06-01",
+      "lesson": 5,
+      "module": 1,
+      "title": "Ngày trong tuần",
+      "description": "Nhập 1..7, in tên ngày",
+      "hint": "Dùng case 1...7",
+      "difficulty": "Dễ",
+      "points": 10,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C06-02",
+      "lesson": 5,
+      "module": 1,
+      "title": "Máy tính menu",
+      "description": "Cho người dùng chọn 1 cộng 2 trừ 3 nhân 4 chia",
+      "hint": "Xử lý chia 0",
+      "difficulty": "Dễ",
+      "points": 10,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C06-03",
+      "lesson": 5,
+      "module": 1,
+      "title": "Đổi tháng",
+      "description": "Nhập số tháng, in số ngày (không xét năm nhuận)",
+      "hint": "Gộp case cùng số ngày",
+      "difficulty": "Vừa",
+      "points": 20,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C06-04",
+      "lesson": 5,
+      "module": 1,
+      "title": "Chọn đồ uống",
+      "description": "Menu 1..5 in tên và giá đồ uống",
+      "hint": "Đừng quên default",
+      "difficulty": "Vừa",
+      "points": 20,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C06-05",
+      "lesson": 5,
+      "module": 1,
+      "title": "Chuyển ký tự",
+      "description": "Nhập ký tự a b c và báo mô tả tương ứng",
+      "hint": "switch trên char",
+      "difficulty": "Vừa",
+      "points": 20,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C06-06",
+      "lesson": 5,
+      "module": 1,
+      "title": "Menu ATM",
+      "description": "Mô phỏng xem số dư, nạp, rút, thoát",
+      "hint": "Chia thành case theo thao tác",
+      "difficulty": "Khó",
+      "points": 35,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C06-07",
+      "lesson": 5,
+      "module": 1,
+      "title": "Máy tính điểm chữ",
+      "description": "Nhập A B C D F rồi in mức điểm tương ứng",
+      "hint": "Chấp nhận chữ hoa và thường",
+      "difficulty": "Khó",
+      "points": 35,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C07-01",
+      "lesson": 6,
+      "module": 1,
+      "title": "In từ 1 tới n",
+      "description": "Nhập n, in các số 1..n",
+      "hint": "Cập nhật i++",
+      "difficulty": "Dễ",
+      "points": 10,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C07-02",
+      "lesson": 6,
+      "module": 1,
+      "title": "Tổng 1 tới n",
+      "description": "Tính tổng n số tự nhiên đầu tiên",
+      "hint": "Tổng kiểu long long",
+      "difficulty": "Dễ",
+      "points": 10,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C07-03",
+      "lesson": 6,
+      "module": 1,
+      "title": "Bảng cửu chương",
+      "description": "Nhập k và in k×1 tới k×10",
+      "hint": "Định dạng mỗi dòng",
+      "difficulty": "Vừa",
+      "points": 20,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C07-04",
+      "lesson": 6,
+      "module": 1,
+      "title": "Tổng số chẵn",
+      "description": "Tính tổng các số chẵn 1..n",
+      "hint": "Điều kiện i%2==0",
+      "difficulty": "Vừa",
+      "points": 20,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C07-05",
+      "lesson": 6,
+      "module": 1,
+      "title": "Đếm số chia hết",
+      "description": "Nhập n,k; đếm số trong 1..n chia hết k",
+      "hint": "Bảo đảm k khác 0",
+      "difficulty": "Vừa",
+      "points": 20,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C07-06",
+      "lesson": 6,
+      "module": 1,
+      "title": "Giai thừa",
+      "description": "Tính n! với n trong 0..20",
+      "hint": "Dùng unsigned long long",
+      "difficulty": "Khó",
+      "points": 35,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C07-07",
+      "lesson": 6,
+      "module": 1,
+      "title": "Tổng bình phương",
+      "description": "Tính 1²+2²+...+n²",
+      "hint": "Cộng i*i",
+      "difficulty": "Khó",
+      "points": 35,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C08-01",
+      "lesson": 7,
+      "module": 1,
+      "title": "Đếm chữ số",
+      "description": "Nhập số nguyên không âm, đếm số chữ số",
+      "hint": "Chú ý n=0",
+      "difficulty": "Dễ",
+      "points": 10,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C08-02",
+      "lesson": 7,
+      "module": 1,
+      "title": "Đảo ngược số",
+      "description": "Nhập n dương, in số đảo ngược",
+      "hint": "Lấy số dư 10 liên tục",
+      "difficulty": "Dễ",
+      "points": 10,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C08-03",
+      "lesson": 7,
+      "module": 1,
+      "title": "Tổng chữ số",
+      "description": "Tính tổng chữ số của số nguyên không âm/Cập nhật n",
+      "hint": "=10",
+      "difficulty": "Vừa",
+      "points": 20,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C08-04",
+      "lesson": 7,
+      "module": 1,
+      "title": "Nhập điểm hợp lệ",
+      "description": "Yêu cầu nhập lại cho tới khi điểm 0..10",
+      "hint": "Dùng do while",
+      "difficulty": "Vừa",
+      "points": 20,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C08-05",
+      "lesson": 7,
+      "module": 1,
+      "title": "Tìm số đầu tiên",
+      "description": "Tìm lũy thừa nhỏ nhất của 2 lớn hơn n",
+      "hint": "Khởi tạo p=1",
+      "difficulty": "Vừa",
+      "points": 20,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C08-06",
+      "lesson": 7,
+      "module": 1,
+      "title": "ƯCLN Euclid",
+      "description": "Nhập a,b dương, tính GCD bằng phép chia dư",
+      "hint": "while(b!=0)",
+      "difficulty": "Khó",
+      "points": 35,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C08-07",
+      "lesson": 7,
+      "module": 1,
+      "title": "Trò đoán số",
+      "description": "Đặt số bí mật 37, nhập tới khi đúng và in gợi ý cao/thấp",
+      "hint": "while cho đến khi đúng",
+      "difficulty": "Khó",
+      "points": 35,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C09-01",
+      "lesson": 8,
+      "module": 2,
+      "title": "Hàm bình phương",
+      "description": "Viết int square(int x) và sử dụng trong main",
+      "hint": "return x*x",
+      "difficulty": "Dễ",
+      "points": 10,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C09-02",
+      "lesson": 8,
+      "module": 2,
+      "title": "Hàm max",
+      "description": "Viết max2 nhận hai số nguyên",
+      "hint": "if hoặc toán tử 3 ngôi",
+      "difficulty": "Dễ",
+      "points": 10,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C09-03",
+      "lesson": 8,
+      "module": 2,
+      "title": "Kiểm tra số chẵn",
+      "description": "Viết isEven trả về 1 nếu chẵn/Thống nhất quy ước 0",
+      "hint": "1",
+      "difficulty": "Vừa",
+      "points": 20,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C09-04",
+      "lesson": 8,
+      "module": 2,
+      "title": "Hàm tính diện tích",
+      "description": "Viết areaCircle(double r) trả double",
+      "hint": "Dùng hằng pi",
+      "difficulty": "Vừa",
+      "points": 20,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C09-05",
+      "lesson": 8,
+      "module": 2,
+      "title": "Hàm tổng đoạn",
+      "description": "Viết sumRange(a,b) tính tổng từ a tới b",
+      "hint": "Xử lý a>b",
+      "difficulty": "Vừa",
+      "points": 20,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C09-06",
+      "lesson": 8,
+      "module": 2,
+      "title": "Hàm nguyên tố",
+      "description": "Viết isPrime(n), thử ước đến sqrt(n)",
+      "hint": "Chú ý n nhỏ hơn 2",
+      "difficulty": "Khó",
+      "points": 35,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C09-07",
+      "lesson": 8,
+      "module": 2,
+      "title": "Bộ thư viện mini",
+      "description": "Viết 4 hàm số học và menu gọi các hàm",
+      "hint": "Đặt prototype hợp lệ",
+      "difficulty": "Khó",
+      "points": 35,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C10-01",
+      "lesson": 9,
+      "module": 2,
+      "title": "Bộ đếm gọi hàm",
+      "description": "Dùng static int count trong một hàm và gọi 5 lần",
+      "hint": "Khởi tạo static một lần",
+      "difficulty": "Dễ",
+      "points": 10,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C10-02",
+      "lesson": 9,
+      "module": 2,
+      "title": "Hằng số PI",
+      "description": "Dùng const double pi để tính chu vi",
+      "hint": "Không ghi đè pi",
+      "difficulty": "Dễ",
+      "points": 10,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C10-03",
+      "lesson": 9,
+      "module": 2,
+      "title": "Trùng tên biến",
+      "description": "Tạo biến x toàn cục và cục bộ, so sánh kết quả",
+      "hint": "Quan sát shadowing",
+      "difficulty": "Vừa",
+      "points": 20,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C10-04",
+      "lesson": 9,
+      "module": 2,
+      "title": "Dãy số gọi lặp",
+      "description": "Hàm nextId() tăng số thứ tự bằng static",
+      "hint": "Giữ trạng thái",
+      "difficulty": "Vừa",
+      "points": 20,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C10-05",
+      "lesson": 9,
+      "module": 2,
+      "title": "Đổi phạm vi",
+      "description": "Viết một hàm nhận tham số thay vì dùng global",
+      "hint": "Truyền bằng giá trị",
+      "difficulty": "Vừa",
+      "points": 20,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C10-06",
+      "lesson": 9,
+      "module": 2,
+      "title": "Giới hạn ngưỡng",
+      "description": "Viết clamp(x,min,max) với hằng giới hạn",
+      "hint": "Không sử dụng biến toàn cục",
+      "difficulty": "Khó",
+      "points": 35,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C10-07",
+      "lesson": 9,
+      "module": 2,
+      "title": "Đếm phần tử hợp lệ",
+      "description": "Dùng hàm đếm qua mảng và số phần tử",
+      "hint": "Tránh dữ liệu toàn cục",
+      "difficulty": "Khó",
+      "points": 35,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C11-01",
+      "lesson": 10,
+      "module": 2,
+      "title": "Giai thừa đệ quy",
+      "description": "Viết factorial(n) cho n trong 0..12",
+      "hint": "0! = 1",
+      "difficulty": "Dễ",
+      "points": 10,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C11-02",
+      "lesson": 10,
+      "module": 2,
+      "title": "Tổng 1 tới n",
+      "description": "Đệ quy sum(n)=n+sum(n-1)",
+      "hint": "sum(0)=0",
+      "difficulty": "Dễ",
+      "points": 10,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C11-03",
+      "lesson": 10,
+      "module": 2,
+      "title": "Lũy thừa",
+      "description": "Viết power(a,n) với n không âm",
+      "hint": "power(a,0)=1",
+      "difficulty": "Vừa",
+      "points": 20,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C11-04",
+      "lesson": 10,
+      "module": 2,
+      "title": "Fibonacci",
+      "description": "Viết fib(n) đệ quy cho n nhỏ",
+      "hint": "Đệ quy thô chậm khi n lớn",
+      "difficulty": "Vừa",
+      "points": 20,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C11-05",
+      "lesson": 10,
+      "module": 2,
+      "title": "Đếm chữ số",
+      "description": "Viết đệ quy đếm chữ số của n",
+      "hint": "Điểm dừng n<10",
+      "difficulty": "Vừa",
+      "points": 20,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C11-06",
+      "lesson": 10,
+      "module": 2,
+      "title": "ƯCLN đệ quy",
+      "description": "Viết gcd(a,b) bằng Euclid",
+      "hint": "gcd(a,0)=a",
+      "difficulty": "Khó",
+      "points": 35,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C11-07",
+      "lesson": 10,
+      "module": 2,
+      "title": "Tháp Hà Nội",
+      "description": "In các bước chuyển n đĩa từ A sang C",
+      "hint": "n nhỏ để dễ kiểm tra",
+      "difficulty": "Khó",
+      "points": 35,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C12-01",
+      "lesson": 11,
+      "module": 2,
+      "title": "Số nguyên tố",
+      "description": "Đếm số nguyên tố từ 1..n",
+      "hint": "Dùng hàm isPrime",
+      "difficulty": "Dễ",
+      "points": 10,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C12-02",
+      "lesson": 11,
+      "module": 2,
+      "title": "Số hoàn hảo",
+      "description": "Tìm số hoàn hảo không vượt quá n",
+      "hint": "Tổng ước thực sự bằng chính số",
+      "difficulty": "Dễ",
+      "points": 10,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C12-03",
+      "lesson": 11,
+      "module": 2,
+      "title": "Số Armstrong 3 chữ số",
+      "description": "Liệt kê số bằng tổng lập phương các chữ số",
+      "hint": "Sử dụng %10",
+      "difficulty": "Vừa",
+      "points": 20,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C12-04",
+      "lesson": 11,
+      "module": 2,
+      "title": "Số đối xứng",
+      "description": "Kiểm tra n đọc ngược vẫn như cũ",
+      "hint": "Lưu n gốc",
+      "difficulty": "Vừa",
+      "points": 20,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C12-05",
+      "lesson": 11,
+      "module": 2,
+      "title": "Tách thừa số nguyên tố",
+      "description": "In phân tích n thành các thừa số nguyên tố",
+      "hint": "Thử chia liên tục",
+      "difficulty": "Vừa",
+      "points": 20,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C12-06",
+      "lesson": 11,
+      "module": 2,
+      "title": "Bội chung nhỏ nhất",
+      "description": "Tính LCM(a,b) với gcd/Ưu tiên a",
+      "hint": "gcd*b",
+      "difficulty": "Khó",
+      "points": 35,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C12-07",
+      "lesson": 11,
+      "module": 2,
+      "title": "Đếm ước nhanh",
+      "description": "Đếm số ước của n bằng cách duyệt đến căn n",
+      "hint": "Ước thành cặp",
+      "difficulty": "Khó",
+      "points": 35,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C13-01",
+      "lesson": 12,
+      "module": 3,
+      "title": "Tổng mảng",
+      "description": "Nhập n<=100 và n số, tính tổng",
+      "hint": "Duyệt i=0..n-1",
+      "difficulty": "Dễ",
+      "points": 10,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C13-02",
+      "lesson": 12,
+      "module": 3,
+      "title": "Giá trị lớn nhất",
+      "description": "Tìm max và vị trí xuất hiện đầu tiên",
+      "hint": "Khởi tạo bằng a[0]",
+      "difficulty": "Dễ",
+      "points": 10,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C13-03",
+      "lesson": 12,
+      "module": 3,
+      "title": "Đếm số dương",
+      "description": "Đếm phần tử dương, âm và bằng 0",
+      "hint": "Duyệt một lần",
+      "difficulty": "Vừa",
+      "points": 20,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C13-04",
+      "lesson": 12,
+      "module": 3,
+      "title": "Đảo mảng",
+      "description": "In các phần tử theo thứ tự ngược",
+      "hint": "Đi từ n-1 tới 0",
+      "difficulty": "Vừa",
+      "points": 20,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C13-05",
+      "lesson": 12,
+      "module": 3,
+      "title": "Trung bình mảng",
+      "description": "Tính trung bình số thực, tránh chia cho 0",
+      "hint": "Kiểm tra n>0",
+      "difficulty": "Vừa",
+      "points": 20,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C13-06",
+      "lesson": 12,
+      "module": 3,
+      "title": "Xóa phần tử",
+      "description": "Xóa phần tử tại vị trí k hợp lệ bằng dịch trái",
+      "hint": "Không truy cập quá giới hạn",
+      "difficulty": "Khó",
+      "points": 35,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C13-07",
+      "lesson": 12,
+      "module": 3,
+      "title": "Phần tử duy nhất",
+      "description": "In các phần tử chỉ xuất hiện một lần",
+      "hint": "Đếm tần suất bằng hai vòng lặp",
+      "difficulty": "Khó",
+      "points": 35,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C14-01",
+      "lesson": 13,
+      "module": 3,
+      "title": "Tổng ma trận",
+      "description": "Nhập m,n<=20 và tính tổng mọi phần tử",
+      "hint": "Hai vòng for",
+      "difficulty": "Dễ",
+      "points": 10,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C14-02",
+      "lesson": 13,
+      "module": 3,
+      "title": "Đường chéo chính",
+      "description": "Nhập ma trận vuông và tính tổng a[i][i]",
+      "hint": "Chỉ dành cho ma trận vuông",
+      "difficulty": "Dễ",
+      "points": 10,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C14-03",
+      "lesson": 13,
+      "module": 3,
+      "title": "Đường chéo phụ",
+      "description": "Tính tổng a[i][n-1-i]",
+      "hint": "Lưu ý chỉ số",
+      "difficulty": "Vừa",
+      "points": 20,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C14-04",
+      "lesson": 13,
+      "module": 3,
+      "title": "Chuyển vị",
+      "description": "In ma trận chuyển vị của m×n thành n×m",
+      "hint": "Đổi thứ tự truy cập a[j][i]",
+      "difficulty": "Vừa",
+      "points": 20,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C14-05",
+      "lesson": 13,
+      "module": 3,
+      "title": "Tổng mỗi hàng",
+      "description": "Tính tổng của từng hàng rồi in",
+      "hint": "Đặt sum=0 đầu mỗi hàng",
+      "difficulty": "Vừa",
+      "points": 20,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C14-06",
+      "lesson": 13,
+      "module": 3,
+      "title": "Cộng hai ma trận",
+      "description": "Cộng hai ma trận cùng kích thước theo phần tử",
+      "hint": "Duyệt hàng và cột",
+      "difficulty": "Khó",
+      "points": 35,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C14-07",
+      "lesson": 13,
+      "module": 3,
+      "title": "Nhân ma trận",
+      "description": "Nhân A(m×k) với B(k×n)",
+      "hint": "Dùng ba vòng lặp",
+      "difficulty": "Khó",
+      "points": 35,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C15-01",
+      "lesson": 14,
+      "module": 3,
+      "title": "Độ dài chuỗi",
+      "description": "Nhập họ tên bằng fgets và đếm số ký tự không kể newline",
+      "hint": "strlen sau khi bỏ newline",
+      "difficulty": "Dễ",
+      "points": 10,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C15-02",
+      "lesson": 14,
+      "module": 3,
+      "title": "Đếm nguyên âm",
+      "description": "Đếm a,e,i,o,u không phân biệt hoa thường",
+      "hint": "Dùng tolower trong ctype.h",
+      "difficulty": "Dễ",
+      "points": 10,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C15-03",
+      "lesson": 14,
+      "module": 3,
+      "title": "Chuỗi đảo",
+      "description": "In chuỗi theo chiều ngược",
+      "hint": "Kiểm tra cuối chuỗi",
+      "difficulty": "Vừa",
+      "points": 20,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C15-04",
+      "lesson": 14,
+      "module": 3,
+      "title": "Chuỗi đối xứng",
+      "description": "Kiểm tra chuỗi palindrome",
+      "hint": "Tách hai đầu vào",
+      "difficulty": "Vừa",
+      "points": 20,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C15-05",
+      "lesson": 14,
+      "module": 3,
+      "title": "Đếm từ",
+      "description": "Đếm số từ trong câu không phân biệt khoảng trắng liên tiếp",
+      "hint": "Dùng cờ đang ở trong từ",
+      "difficulty": "Vừa",
+      "points": 20,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C15-06",
+      "lesson": 14,
+      "module": 3,
+      "title": "Chuẩn hóa khoảng trắng",
+      "description": "Bỏ khoảng trắng đầu/cuối và gộp khoảng trắng giữa các từ",
+      "hint": "Duyệt từng ký tự",
+      "difficulty": "Khó",
+      "points": 35,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C15-07",
+      "lesson": 14,
+      "module": 3,
+      "title": "So sánh hai chuỗi",
+      "description": "Viết kiểm tra từ điển bằng strcmp",
+      "hint": "In kết quả nhỏ hơn, bằng, lớn hơn",
+      "difficulty": "Khó",
+      "points": 35,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C16-01",
+      "lesson": 15,
+      "module": 3,
+      "title": "Kiểm tra chữ số",
+      "description": "Nhập ký tự và thông báo có phải chữ số không",
+      "hint": "Dùng isdigit",
+      "difficulty": "Dễ",
+      "points": 10,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C16-02",
+      "lesson": 15,
+      "module": 3,
+      "title": "Đổi hoa thường",
+      "description": "Cho câu ASCII, đổi chữ hoa thành thường",
+      "hint": "Dùng tolower",
+      "difficulty": "Dễ",
+      "points": 10,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C16-03",
+      "lesson": 15,
+      "module": 3,
+      "title": "Đếm ký tự đặc biệt",
+      "description": "Đếm ký tự không thuộc chữ/số/khoảng trắng",
+      "hint": "Kết hợp isalnum và isspace",
+      "difficulty": "Vừa",
+      "points": 20,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C16-04",
+      "lesson": 15,
+      "module": 3,
+      "title": "Thống kê ký tự",
+      "description": "Đếm chữ cái, chữ số, khoảng trắng trong chuỗi",
+      "hint": "Duyệt char[]",
+      "difficulty": "Vừa",
+      "points": 20,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C16-05",
+      "lesson": 15,
+      "module": 3,
+      "title": "Mã ASCII",
+      "description": "Nhập một ký tự ASCII, in mã số và ký tự",
+      "hint": "Dùng %d với kiểu int",
+      "difficulty": "Vừa",
+      "points": 20,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C16-06",
+      "lesson": 15,
+      "module": 3,
+      "title": "Mã hóa Caesar",
+      "description": "Dịch chữ cái tiếng Anh k bước với k>=0",
+      "hint": "Dùng modulo 26",
+      "difficulty": "Khó",
+      "points": 35,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C16-07",
+      "lesson": 15,
+      "module": 3,
+      "title": "Tần suất chữ cái",
+      "description": "Đếm số lần xuất hiện a..z, không phân biệt hoa thường",
+      "hint": "Mảng count[26]",
+      "difficulty": "Khó",
+      "points": 35,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C17-01",
+      "lesson": 16,
+      "module": 4,
+      "title": "Địa chỉ của biến",
+      "description": "In địa chỉ int bằng %p và (void*)",
+      "hint": "Dùng &x",
+      "difficulty": "Dễ",
+      "points": 10,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C17-02",
+      "lesson": 16,
+      "module": 4,
+      "title": "Giải tham chiếu",
+      "description": "Cho p=&x, đổi *p rồi in x",
+      "hint": "Ghi thông qua con trỏ",
+      "difficulty": "Dễ",
+      "points": 10,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C17-03",
+      "lesson": 16,
+      "module": 4,
+      "title": "Hoán đổi bằng con trỏ",
+      "description": "Viết swap(int *a,int *b) hoạt động thật",
+      "hint": "Truyền &x và &y",
+      "difficulty": "Vừa",
+      "points": 20,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C17-04",
+      "lesson": 16,
+      "module": 4,
+      "title": "Trả về kết quả kép",
+      "description": "Hàm divmod(a,b,&q,&r) trả thương và dư qua con trỏ",
+      "hint": "Bảo vệ b!=0",
+      "difficulty": "Vừa",
+      "points": 20,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C17-05",
+      "lesson": 16,
+      "module": 4,
+      "title": "Min và max",
+      "description": "Viết hàm trả min,max qua tham số con trỏ",
+      "hint": "Đừng trả địa chỉ biến local",
+      "difficulty": "Vừa",
+      "points": 20,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C17-06",
+      "lesson": 16,
+      "module": 4,
+      "title": "Con trỏ NULL",
+      "description": "Kiểm tra p!=NULL trước khi truy cập",
+      "hint": "Ghi rõ đường xử lý NULL",
+      "difficulty": "Khó",
+      "points": 35,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C17-07",
+      "lesson": 16,
+      "module": 4,
+      "title": "Tìm phần tử",
+      "description": "Viết hàm trả con trỏ tới phần tử đầu tiên bằng x",
+      "hint": "Nếu không tìm thấy trả NULL",
+      "difficulty": "Khó",
+      "points": 35,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C18-01",
+      "lesson": 17,
+      "module": 4,
+      "title": "Tính tổng bằng con trỏ",
+      "description": "Duyệt mảng n số bằng p++ và tính tổng",
+      "hint": "Không ra ngoài a+n",
+      "difficulty": "Dễ",
+      "points": 10,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C18-02",
+      "lesson": 17,
+      "module": 4,
+      "title": "Đảo mảng tại chỗ",
+      "description": "Dùng hai con trỏ trái/phải để hoán đổi",
+      "hint": "Tránh khi n=0",
+      "difficulty": "Dễ",
+      "points": 10,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C18-03",
+      "lesson": 17,
+      "module": 4,
+      "title": "Tìm cực đại",
+      "description": "Viết maxPointer(const int *a,int n)",
+      "hint": "Không sửa dữ liệu đầu vào",
+      "difficulty": "Vừa",
+      "points": 20,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C18-04",
+      "lesson": 17,
+      "module": 4,
+      "title": "Sao chép mảng",
+      "description": "Sao chép n phần tử qua con trỏ, hai mảng không đè nhau",
+      "hint": "Tự duyệt",
+      "difficulty": "Vừa",
+      "points": 20,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C18-05",
+      "lesson": 17,
+      "module": 4,
+      "title": "Đếm ký tự",
+      "description": "Viết my_strlen(const char *s) không dùng strlen",
+      "hint": "Dừng ở '\\\\0'",
+      "difficulty": "Vừa",
+      "points": 20,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C18-06",
+      "lesson": 17,
+      "module": 4,
+      "title": "So sánh chuỗi",
+      "description": "Viết my_strcmp cho chuỗi ASCII",
+      "hint": "Trả âm,0,dương",
+      "difficulty": "Khó",
+      "points": 35,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C18-07",
+      "lesson": 17,
+      "module": 4,
+      "title": "Sắp xếp con trỏ",
+      "description": "Dùng con trỏ để sắp xếp mảng bằng selection sort",
+      "hint": "Đổi nội dung, không phải đổi địa chỉ",
+      "difficulty": "Khó",
+      "points": 35,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C19-01",
+      "lesson": 18,
+      "module": 4,
+      "title": "Máy tính callback",
+      "description": "Tạo add,subtract và một hàm calculate(a,b,op)",
+      "hint": "Kiểm tra op!=NULL",
+      "difficulty": "Dễ",
+      "points": 10,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C19-02",
+      "lesson": 18,
+      "module": 4,
+      "title": "Chọn hàm bằng menu",
+      "description": "Người dùng chọn 1 hoặc 2 rồi gọi con trỏ hàm",
+      "hint": "Dùng switch gán con trỏ",
+      "difficulty": "Dễ",
+      "points": 10,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C19-03",
+      "lesson": 18,
+      "module": 4,
+      "title": "Tính toán mảng",
+      "description": "Áp dụng hàm transform(int) lên từng phần tử",
+      "hint": "Duyệt an toàn",
+      "difficulty": "Vừa",
+      "points": 20,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C19-04",
+      "lesson": 18,
+      "module": 4,
+      "title": "So sánh qsort",
+      "description": "Sắp xếp mảng int bằng qsort và comparator",
+      "hint": "Tránh phép trừ gây tràn trong comparator",
+      "difficulty": "Vừa",
+      "points": 20,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C19-05",
+      "lesson": 18,
+      "module": 4,
+      "title": "Bộ lọc",
+      "description": "Viết filter(a,n,predicate) in phần tử thỏa",
+      "hint": "Viết isEven và isPositive",
+      "difficulty": "Vừa",
+      "points": 20,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C19-06",
+      "lesson": 18,
+      "module": 4,
+      "title": "Bảng hàm",
+      "description": "Mảng gồm 3 con trỏ hàm toán học",
+      "hint": "Gọi theo chỉ số có kiểm tra",
+      "difficulty": "Khó",
+      "points": 35,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C19-07",
+      "lesson": 18,
+      "module": 4,
+      "title": "Callback thống kê",
+      "description": "Tạo hàm reduce với callback gộp hai số và giá trị đầu tiên",
+      "hint": "Tương tự fold",
+      "difficulty": "Khó",
+      "points": 35,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C20-01",
+      "lesson": 19,
+      "module": 4,
+      "title": "Mảng động n số",
+      "description": "Nhập n, cấp phát n int bằng malloc rồi tính tổng",
+      "hint": "Kiểm tra n và NULL",
+      "difficulty": "Dễ",
+      "points": 10,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C20-02",
+      "lesson": 19,
+      "module": 4,
+      "title": "Trung bình động",
+      "description": "Nhập n điểm thực vào calloc, tính trung bình",
+      "hint": "Giải phóng sau sử dụng",
+      "difficulty": "Dễ",
+      "points": 10,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C20-03",
+      "lesson": 19,
+      "module": 4,
+      "title": "Tăng sức chứa",
+      "description": "Khởi tạo mảng động 4 phần tử rồi realloc thành 8",
+      "hint": "Con trỏ phụ khi realloc",
+      "difficulty": "Vừa",
+      "points": 20,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C20-04",
+      "lesson": 19,
+      "module": 4,
+      "title": "Sao chép chuỗi",
+      "description": "Viết my_strdup dùng malloc và strcpy",
+      "hint": "Cấp strlen+1 byte",
+      "difficulty": "Vừa",
+      "points": 20,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C20-05",
+      "lesson": 19,
+      "module": 4,
+      "title": "Ma trận cấp phát",
+      "description": "Cấp phát ma trận liên tục m×n, truy cập qua i*n+j",
+      "hint": "Chú ý tràn kích thước",
+      "difficulty": "Vừa",
+      "points": 20,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C20-06",
+      "lesson": 19,
+      "module": 4,
+      "title": "Thêm phần tử",
+      "description": "Viết hàm append vào mảng động với realloc",
+      "hint": "Đừng làm mất địa chỉ cũ khi lỗi",
+      "difficulty": "Khó",
+      "points": 35,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C20-07",
+      "lesson": 19,
+      "module": 4,
+      "title": "Danh bạ động",
+      "description": "Lưu danh sách liên hệ bằng mảng struct cấp phát động",
+      "hint": "Có thao tác thêm, xóa, giải phóng",
+      "difficulty": "Khó",
+      "points": 35,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C21-01",
+      "lesson": 20,
+      "module": 5,
+      "title": "Hồ sơ sinh viên",
+      "description": "Khai báo struct Student chứa id,name,gpa và in",
+      "hint": "Trường name có độ dài cố định",
+      "difficulty": "Dễ",
+      "points": 10,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C21-02",
+      "lesson": 20,
+      "module": 5,
+      "title": "Danh sách sinh viên",
+      "description": "Nhập n sinh viên rồi in danh sách",
+      "hint": "Sử dụng mảng struct",
+      "difficulty": "Dễ",
+      "points": 10,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C21-03",
+      "lesson": 20,
+      "module": 5,
+      "title": "Sinh viên điểm cao",
+      "description": "Tìm sinh viên có GPA cao nhất",
+      "hint": "So sánh từng trường",
+      "difficulty": "Vừa",
+      "points": 20,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C21-04",
+      "lesson": 20,
+      "module": 5,
+      "title": "Sắp xếp theo điểm",
+      "description": "Sắp xếp mảng Student theo gpa giảm dần",
+      "hint": "Hoán đổi cả struct",
+      "difficulty": "Vừa",
+      "points": 20,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C21-05",
+      "lesson": 20,
+      "module": 5,
+      "title": "Tìm theo mã",
+      "description": "Viết hàm tìm Student bằng id",
+      "hint": "Trả về vị trí hoặc -1",
+      "difficulty": "Vừa",
+      "points": 20,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C21-06",
+      "lesson": 20,
+      "module": 5,
+      "title": "Quản lý sách",
+      "description": "Struct Book gồm tên, tác giả, năm, giá; lọc sách theo năm",
+      "hint": "Dùng fgets nếu có khoảng trắng",
+      "difficulty": "Khó",
+      "points": 35,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C21-07",
+      "lesson": 20,
+      "module": 5,
+      "title": "Quản lý điểm học phần",
+      "description": "Struct gồm tên môn, tín chỉ, điểm; tính GPA trọng số",
+      "hint": "Tổng điểm×tín chỉ chia tổng tín",
+      "difficulty": "Khó",
+      "points": 35,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C22-01",
+      "lesson": 21,
+      "module": 5,
+      "title": "Trạng thái công việc",
+      "description": "Tạo enum Status {TODO,DOING,DONE} và in tên",
+      "hint": "Dùng switch",
+      "difficulty": "Dễ",
+      "points": 10,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C22-02",
+      "lesson": 21,
+      "module": 5,
+      "title": "Vai trò người dùng",
+      "description": "Tạo enum Role, quy định quyền qua điều kiện",
+      "hint": "Phân biệt role",
+      "difficulty": "Dễ",
+      "points": 10,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C22-03",
+      "lesson": 21,
+      "module": 5,
+      "title": "Bí danh sinh viên",
+      "description": "typedef struct Student rồi tạo mảng",
+      "hint": "Tránh lặp từ khóa struct",
+      "difficulty": "Vừa",
+      "points": 20,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C22-04",
+      "lesson": 21,
+      "module": 5,
+      "title": "Màu RGB",
+      "description": "Tạo struct RGB và trộn hai màu bằng trung bình",
+      "hint": "3 trường unsigned char",
+      "difficulty": "Vừa",
+      "points": 20,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C22-05",
+      "lesson": 21,
+      "module": 5,
+      "title": "Union giá trị",
+      "description": "Tạo union Value có int và float, chỉ đọc loại vừa gán",
+      "hint": "Nhận diện trường đang dùng bằng enum",
+      "difficulty": "Vừa",
+      "points": 20,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C22-06",
+      "lesson": 21,
+      "module": 5,
+      "title": "Thông điệp gắn nhãn",
+      "description": "Tạo struct chứa enum type và union payload",
+      "hint": "Truy cập theo tag",
+      "difficulty": "Khó",
+      "points": 35,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C22-07",
+      "lesson": 21,
+      "module": 5,
+      "title": "Hàng đợi trạng thái",
+      "description": "Menu thay đổi trạng thái nhiều nhiệm vụ từ TODO sang DONE",
+      "hint": "Không để trạng thái không hợp lệ",
+      "difficulty": "Khó",
+      "points": 35,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C23-01",
+      "lesson": 22,
+      "module": 5,
+      "title": "Ghi lời chào",
+      "description": "Tạo hello.txt và ghi 3 dòng bằng fprintf",
+      "hint": "Đóng tệp",
+      "difficulty": "Dễ",
+      "points": 10,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C23-02",
+      "lesson": 22,
+      "module": 5,
+      "title": "Đọc nội dung",
+      "description": "Đọc từng dòng từ hello.txt bằng fgets và in",
+      "hint": "while(fgets(...))",
+      "difficulty": "Dễ",
+      "points": 10,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C23-03",
+      "lesson": 22,
+      "module": 5,
+      "title": "Lưu số nguyên",
+      "description": "Nhập n số rồi ghi vào numbers.txt",
+      "hint": "Một số mỗi dòng",
+      "difficulty": "Vừa",
+      "points": 20,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C23-04",
+      "lesson": 22,
+      "module": 5,
+      "title": "Tổng số trong tệp",
+      "description": "Đọc số nguyên từ numbers.txt và tính tổng",
+      "hint": "while(fscanf(f,\"%d\",&x)==1)",
+      "difficulty": "Vừa",
+      "points": 20,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C23-05",
+      "lesson": 22,
+      "module": 5,
+      "title": "Nhật ký điểm",
+      "description": "Lưu tên môn và điểm vào scores.txt chế độ append",
+      "hint": "Dùng a",
+      "difficulty": "Vừa",
+      "points": 20,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C23-06",
+      "lesson": 22,
+      "module": 5,
+      "title": "Sao chép tệp",
+      "description": "Đọc nguồn và ghi đích bằng khối byte fread/fwrite",
+      "hint": "Bộ đệm 4096 byte",
+      "difficulty": "Khó",
+      "points": 35,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C23-07",
+      "lesson": 22,
+      "module": 5,
+      "title": "CSV sinh viên",
+      "description": "Ghi và đọc danh sách Student dạng CSV đơn giản",
+      "hint": "Quy định tên không chứa dấu phẩy",
+      "difficulty": "Khó",
+      "points": 35,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C24-01",
+      "lesson": 23,
+      "module": 5,
+      "title": "Hằng bằng macro",
+      "description": "Định nghĩa MAX_SIZE 100 và dùng trong kiểm tra mảng",
+      "hint": "Không có dấu chấm phẩy sau #define",
+      "difficulty": "Dễ",
+      "points": 10,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C24-02",
+      "lesson": 23,
+      "module": 5,
+      "title": "Macro bình phương",
+      "description": "Tạo macro SQUARE(x) và thử 1+2",
+      "hint": "Dùng ((x)*(x))",
+      "difficulty": "Dễ",
+      "points": 10,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C24-03",
+      "lesson": 23,
+      "module": 5,
+      "title": "Conditional compilation",
+      "description": "Dùng #ifdef DEBUG in log khi có định nghĩa",
+      "hint": "Thử hai cách biên dịch",
+      "difficulty": "Vừa",
+      "points": 20,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C24-04",
+      "lesson": 23,
+      "module": 5,
+      "title": "Header phép toán",
+      "description": "Tạo math_utils.h chứa prototype và .c chứa định nghĩa",
+      "hint": "Tránh include trực tiếp file .c",
+      "difficulty": "Vừa",
+      "points": 20,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C24-05",
+      "lesson": 23,
+      "module": 5,
+      "title": "Include guard",
+      "description": "Tạo guard MY_UTILS_H cho header",
+      "hint": "Đảm bảo #endif",
+      "difficulty": "Vừa",
+      "points": 20,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C24-06",
+      "lesson": 23,
+      "module": 5,
+      "title": "Biên dịch nhiều tệp",
+      "description": "Tạo main.c và utils.c rồi gcc main.c utils.c",
+      "hint": "Tách phần giao diện và xử lý",
+      "difficulty": "Khó",
+      "points": 35,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C24-07",
+      "lesson": 23,
+      "module": 5,
+      "title": "Macro an toàn",
+      "description": "Thay macro MAX bằng hàm để tránh đánh giá tham số nhiều lần",
+      "hint": "So sánh ưu và nhược",
+      "difficulty": "Khó",
+      "points": 35,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C25-01",
+      "lesson": 24,
+      "module": 6,
+      "title": "Tìm tuyến tính",
+      "description": "Nhập x và tìm vị trí đầu tiên trong mảng",
+      "hint": "Không tìm thấy in -1",
+      "difficulty": "Dễ",
+      "points": 10,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C25-02",
+      "lesson": 24,
+      "module": 6,
+      "title": "Đếm lần xuất hiện",
+      "description": "Đếm số lần x xuất hiện bằng một lượt duyệt",
+      "hint": "Tạo biến count",
+      "difficulty": "Dễ",
+      "points": 10,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C25-03",
+      "lesson": 24,
+      "module": 6,
+      "title": "Tìm nhị phân",
+      "description": "Viết binarySearch cho mảng tăng dần",
+      "hint": "Chia đôi khoảng",
+      "difficulty": "Vừa",
+      "points": 20,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C25-04",
+      "lesson": 24,
+      "module": 6,
+      "title": "Vị trí chèn",
+      "description": "Tìm vị trí đầu tiên có a[i]>=x bằng binary search",
+      "hint": "Dạng lower_bound",
+      "difficulty": "Vừa",
+      "points": 20,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C25-05",
+      "lesson": 24,
+      "module": 6,
+      "title": "Phần tử đầu tiên",
+      "description": "Trong mảng đã sắp xếp, tìm vị trí xuất hiện đầu tiên của x",
+      "hint": "Mở rộng binary search",
+      "difficulty": "Vừa",
+      "points": 20,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C25-06",
+      "lesson": 24,
+      "module": 6,
+      "title": "Tìm theo tên",
+      "description": "Trong mảng Student, tìm tuyến tính theo tên",
+      "hint": "strcmp",
+      "difficulty": "Khó",
+      "points": 35,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C25-07",
+      "lesson": 24,
+      "module": 6,
+      "title": "So sánh tốc độ",
+      "description": "Tạo mảng tăng 1..100000 và đếm số so sánh của hai thuật toán",
+      "hint": "Không cần thời gian hệ thống",
+      "difficulty": "Khó",
+      "points": 35,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C26-01",
+      "lesson": 25,
+      "module": 6,
+      "title": "Bubble sort",
+      "description": "Sắp xếp n số tăng dần bằng bubble sort",
+      "hint": "Có cờ swapped",
+      "difficulty": "Dễ",
+      "points": 10,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C26-02",
+      "lesson": 25,
+      "module": 6,
+      "title": "Selection sort",
+      "description": "Sắp xếp bằng cách chọn phần tử nhỏ nhất đoạn còn lại",
+      "hint": "Hoán đổi",
+      "difficulty": "Dễ",
+      "points": 10,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C26-03",
+      "lesson": 25,
+      "module": 6,
+      "title": "Insertion sort",
+      "description": "Chèn phần tử vào đoạn đã sắp xếp",
+      "hint": "Dịch phần tử lớn hơn",
+      "difficulty": "Vừa",
+      "points": 20,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C26-04",
+      "lesson": 25,
+      "module": 6,
+      "title": "Sắp xếp giảm dần",
+      "description": "Dùng qsort và comparator giảm dần",
+      "hint": "So sánh bằng nhánh",
+      "difficulty": "Vừa",
+      "points": 20,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C26-05",
+      "lesson": 25,
+      "module": 6,
+      "title": "Sắp xếp sinh viên",
+      "description": "Sắp xếp theo GPA giảm, khi bằng thì theo tên",
+      "hint": "Tie-breaker",
+      "difficulty": "Vừa",
+      "points": 20,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C26-06",
+      "lesson": 25,
+      "module": 6,
+      "title": "Gộp hai dãy tăng",
+      "description": "Gộp hai mảng đã sắp xếp thành mảng thứ ba",
+      "hint": "Hai con trỏ",
+      "difficulty": "Khó",
+      "points": 35,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C26-07",
+      "lesson": 25,
+      "module": 6,
+      "title": "Merge sort",
+      "description": "Tự cài đặt sắp xếp trộn O(n log n)",
+      "hint": "Chia đôi và merge",
+      "difficulty": "Khó",
+      "points": 35,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C27-01",
+      "lesson": 26,
+      "module": 6,
+      "title": "Tạo node",
+      "description": "Tạo một Node có value=10 và next=NULL",
+      "hint": "Cấp malloc",
+      "difficulty": "Dễ",
+      "points": 10,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C27-02",
+      "lesson": 26,
+      "module": 6,
+      "title": "Duyệt danh sách",
+      "description": "Tạo danh sách ba node, in tất cả phần tử",
+      "hint": "while(p!=NULL)",
+      "difficulty": "Dễ",
+      "points": 10,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C27-03",
+      "lesson": 26,
+      "module": 6,
+      "title": "Thêm đầu",
+      "description": "Viết pushFront(Node **head,int x)",
+      "hint": "newNode->next=*head",
+      "difficulty": "Vừa",
+      "points": 20,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C27-04",
+      "lesson": 26,
+      "module": 6,
+      "title": "Thêm cuối",
+      "description": "Viết pushBack, xử lý danh sách rỗng",
+      "hint": "Tìm node cuối",
+      "difficulty": "Vừa",
+      "points": 20,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C27-05",
+      "lesson": 26,
+      "module": 6,
+      "title": "Xóa giá trị",
+      "description": "Xóa node đầu tiên mang giá trị x",
+      "hint": "Phân biệt xóa head",
+      "difficulty": "Vừa",
+      "points": 20,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C27-06",
+      "lesson": 26,
+      "module": 6,
+      "title": "Đảo danh sách",
+      "description": "Đảo liên kết bằng prev,current,next",
+      "hint": "Lưu next trước khi đổi",
+      "difficulty": "Khó",
+      "points": 35,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C27-07",
+      "lesson": 26,
+      "module": 6,
+      "title": "Quản lý playlist",
+      "description": "Viết menu thêm xóa tìm, in danh sách và dọn bộ nhớ",
+      "hint": "Không memory leak",
+      "difficulty": "Khó",
+      "points": 35,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C28-01",
+      "lesson": 27,
+      "module": 6,
+      "title": "Stack bằng mảng",
+      "description": "Viết push/pop/peek với MAX=100",
+      "hint": "Dùng top=-1",
+      "difficulty": "Dễ",
+      "points": 10,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C28-02",
+      "lesson": 27,
+      "module": 6,
+      "title": "Đảo chuỗi bằng stack",
+      "description": "Đưa ký tự vào stack rồi lấy ra",
+      "hint": "In ngược",
+      "difficulty": "Dễ",
+      "points": 10,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C28-03",
+      "lesson": 27,
+      "module": 6,
+      "title": "Kiểm tra dấu ngoặc",
+      "description": "Cho chuỗi gồm (),[],{}; xác minh cân bằng",
+      "hint": "Stack các dấu mở",
+      "difficulty": "Vừa",
+      "points": 20,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C28-04",
+      "lesson": 27,
+      "module": 6,
+      "title": "Queue bằng mảng vòng",
+      "description": "Viết enqueue/dequeue với head,tail,count",
+      "hint": "Modulo capacity",
+      "difficulty": "Vừa",
+      "points": 20,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C28-05",
+      "lesson": 27,
+      "module": 6,
+      "title": "Mô phỏng quầy vé",
+      "description": "Nhập nhiều khách theo lượt rồi xử lý FIFO",
+      "hint": "Queue",
+      "difficulty": "Vừa",
+      "points": 20,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C28-06",
+      "lesson": 27,
+      "module": 6,
+      "title": "Lịch sử trình duyệt",
+      "description": "Mô phỏng back bằng stack hai chiều",
+      "hint": "Tự định nghĩa chuyển trang",
+      "difficulty": "Khó",
+      "points": 35,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C28-07",
+      "lesson": 27,
+      "module": 6,
+      "title": "Đánh giá hậu tố",
+      "description": "Tính biểu thức hậu tố như 5 2 + 3 *",
+      "hint": "Stack số và toán tử",
+      "difficulty": "Khó",
+      "points": 35,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C29-01",
+      "lesson": 28,
+      "module": 7,
+      "title": "Chẵn lẻ qua bit",
+      "description": "Kiểm tra x&1 để phân biệt chẵn lẻ",
+      "hint": "Số nguyên không âm",
+      "difficulty": "Dễ",
+      "points": 10,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C29-02",
+      "lesson": 28,
+      "module": 7,
+      "title": "Đếm bit 1",
+      "description": "Đếm số bit bật của unsigned int",
+      "hint": "Nhân x&=x-1",
+      "difficulty": "Dễ",
+      "points": 10,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C29-03",
+      "lesson": 28,
+      "module": 7,
+      "title": "Bật bit k",
+      "description": "Nhập x,k trong giới hạn và bật bit k",
+      "hint": "1u<<k",
+      "difficulty": "Vừa",
+      "points": 20,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C29-04",
+      "lesson": 28,
+      "module": 7,
+      "title": "Tắt bit k",
+      "description": "Xóa bit k của unsigned x",
+      "hint": "Mask đảo",
+      "difficulty": "Vừa",
+      "points": 20,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C29-05",
+      "lesson": 28,
+      "module": 7,
+      "title": "Đảo bit k",
+      "description": "Toggle bit k bằng XOR",
+      "hint": "x^(1u<<k)",
+      "difficulty": "Vừa",
+      "points": 20,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C29-06",
+      "lesson": 28,
+      "module": 7,
+      "title": "Kiểm tra lũy thừa 2",
+      "description": "Xác định x>0 và (x&(x-1))==0",
+      "hint": "Dùng unsigned",
+      "difficulty": "Khó",
+      "points": 35,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C29-07",
+      "lesson": 28,
+      "module": 7,
+      "title": "Bộ cờ quyền",
+      "description": "Tạo các bit READ WRITE ADMIN, kiểm tra và chỉnh sửa quyền",
+      "hint": "Enum bitmask",
+      "difficulty": "Khó",
+      "points": 35,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C30-01",
+      "lesson": 29,
+      "module": 7,
+      "title": "qsort double",
+      "description": "Sắp xếp mảng double với qsort",
+      "hint": "Comparator trả -1 0 1",
+      "difficulty": "Dễ",
+      "points": 10,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C30-02",
+      "lesson": 29,
+      "module": 7,
+      "title": "qsort struct",
+      "description": "Sắp xếp Student theo tên với strcmp",
+      "hint": "Chuyển con trỏ void sang Student*",
+      "difficulty": "Dễ",
+      "points": 10,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C30-03",
+      "lesson": 29,
+      "module": 7,
+      "title": "bsearch",
+      "description": "Tìm số trong mảng tăng bằng hàm bsearch của stdlib.h",
+      "hint": "Mảng phải sắp xếp",
+      "difficulty": "Vừa",
+      "points": 20,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C30-04",
+      "lesson": 29,
+      "module": 7,
+      "title": "Generic swap",
+      "description": "Viết swapBytes(void *a,void *b,size_t size) dùng unsigned char*",
+      "hint": "Đổi từng byte",
+      "difficulty": "Vừa",
+      "points": 20,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C30-05",
+      "lesson": 29,
+      "module": 7,
+      "title": "Foreach callback",
+      "description": "Viết forEachInt nhận con trỏ hàm xử lý từng phần tử",
+      "hint": "Không để hàm sửa ngoài vùng nhớ",
+      "difficulty": "Vừa",
+      "points": 20,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C30-06",
+      "lesson": 29,
+      "module": 7,
+      "title": "Bộ sưu tập thống kê",
+      "description": "Truyền comparator cho hàm chọn max tổng quát",
+      "hint": "Thực hiện trên mảng struct",
+      "difficulty": "Khó",
+      "points": 35,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C30-07",
+      "lesson": 29,
+      "module": 7,
+      "title": "Mô-đun lọc dữ liệu",
+      "description": "Viết hàm lọc mảng struct theo callback predicate",
+      "hint": "Quản lý cấp phát đầu ra",
+      "difficulty": "Khó",
+      "points": 35,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C31-01",
+      "lesson": 30,
+      "module": 7,
+      "title": "Đọc số an toàn",
+      "description": "Viết hàm nhập int có kiểm tra khi người dùng nhập chữ",
+      "hint": "Ưu tiên fgets rồi strtol",
+      "difficulty": "Dễ",
+      "points": 10,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C31-02",
+      "lesson": 30,
+      "module": 7,
+      "title": "Bảo vệ chia 0",
+      "description": "Viết máy tính không bao giờ thực hiện chia 0",
+      "hint": "Xử lý trước khi chia",
+      "difficulty": "Dễ",
+      "points": 10,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C31-03",
+      "lesson": 30,
+      "module": 7,
+      "title": "Đọc chuỗi giới hạn",
+      "description": "Nhập tên tối đa 49 ký tự mà không tràn buffer",
+      "hint": "Dùng fgets",
+      "difficulty": "Vừa",
+      "points": 20,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C31-04",
+      "lesson": 30,
+      "module": 7,
+      "title": "Kiểm lỗi fopen",
+      "description": "Thử mở tệp không tồn tại và thông báo lỗi",
+      "hint": "Dùng perror",
+      "difficulty": "Vừa",
+      "points": 20,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C31-05",
+      "lesson": 30,
+      "module": 7,
+      "title": "Kiểm lỗi malloc",
+      "description": "Viết hàm cấp phát kiểm tra lỗi và giải phóng khi thoát",
+      "hint": "Bảo vệ kích thước",
+      "difficulty": "Vừa",
+      "points": 20,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C31-06",
+      "lesson": 30,
+      "module": 7,
+      "title": "Tối ưu vòng lặp",
+      "description": "Loại một lần duyệt dư thừa khỏi thống kê mảng",
+      "hint": "So sánh hai cách",
+      "difficulty": "Khó",
+      "points": 35,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C31-07",
+      "lesson": 30,
+      "module": 7,
+      "title": "Debug bằng assert",
+      "description": "Viết kiểm thử đơn giản cho gcd, isPrime, swap với assert",
+      "hint": "Chạy trong main",
+      "difficulty": "Khó",
+      "points": 35,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C32-01",
+      "lesson": 31,
+      "module": 8,
+      "title": "Phiên bản 1",
+      "description": "Tạo menu thêm và in sinh viên",
+      "hint": "Tách addStudent, printStudents",
+      "difficulty": "Dễ",
+      "points": 10,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C32-02",
+      "lesson": 31,
+      "module": 8,
+      "title": "Phiên bản 2",
+      "description": "Thêm chức năng tìm theo mã số sinh viên",
+      "hint": "Định dạng mã duy nhất",
+      "difficulty": "Dễ",
+      "points": 10,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C32-03",
+      "lesson": 31,
+      "module": 8,
+      "title": "Phiên bản 3",
+      "description": "Thêm sửa thông tin và xóa theo mã",
+      "hint": "Đổi vị trí an toàn",
+      "difficulty": "Vừa",
+      "points": 20,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C32-04",
+      "lesson": 31,
+      "module": 8,
+      "title": "Phiên bản 4",
+      "description": "Sắp xếp danh sách theo GPA",
+      "hint": "Giữ lại tất cả trường",
+      "difficulty": "Vừa",
+      "points": 20,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C32-05",
+      "lesson": 31,
+      "module": 8,
+      "title": "Phiên bản 5",
+      "description": "Lưu file CSV và tải lại khi chạy",
+      "hint": "Fopen kiểm tra NULL",
+      "difficulty": "Vừa",
+      "points": 20,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C32-06",
+      "lesson": 31,
+      "module": 8,
+      "title": "Phiên bản 6",
+      "description": "Xử lý tên có dấu cách và điểm không hợp lệ",
+      "hint": "Dùng fgets và strtod",
+      "difficulty": "Khó",
+      "points": 35,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C32-07",
+      "lesson": 31,
+      "module": 8,
+      "title": "Phiên bản cuối",
+      "description": "Kết hợp 6 chức năng, biên dịch -Wall -Wextra và viết README",
+      "hint": "Tạo dữ liệu thử",
+      "difficulty": "Khó",
+      "points": 35,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C33-01",
+      "lesson": 32,
+      "module": 8,
+      "title": "Danh mục sách",
+      "description": "Thêm và liệt kê Book bằng struct",
+      "hint": "Đặt số lượng >=0",
+      "difficulty": "Dễ",
+      "points": 10,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C33-02",
+      "lesson": 32,
+      "module": 8,
+      "title": "Tìm sách",
+      "description": "Tìm theo mã hoặc một phần tên",
+      "hint": "Dùng strstr với chuỗi C",
+      "difficulty": "Dễ",
+      "points": 10,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C33-03",
+      "lesson": 32,
+      "module": 8,
+      "title": "Mượn sách",
+      "description": "Giảm số lượng nếu còn, in kết quả",
+      "hint": "Không cho âm",
+      "difficulty": "Vừa",
+      "points": 20,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C33-04",
+      "lesson": 32,
+      "module": 8,
+      "title": "Trả sách",
+      "description": "Tăng số lượng và ghi nhật ký",
+      "hint": "Thêm bản ghi",
+      "difficulty": "Vừa",
+      "points": 20,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C33-05",
+      "lesson": 32,
+      "module": 8,
+      "title": "Thống kê",
+      "description": "Đếm tổng tựa sách và số bản còn lại",
+      "hint": "Duyệt mảng",
+      "difficulty": "Vừa",
+      "points": 20,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C33-06",
+      "lesson": 32,
+      "module": 8,
+      "title": "Lưu dữ liệu",
+      "description": "Ghi và đọc Book từ file text",
+      "hint": "Quy ước phân cách rõ ràng",
+      "difficulty": "Khó",
+      "points": 35,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C33-07",
+      "lesson": 32,
+      "module": 8,
+      "title": "Hệ thống hoàn chỉnh",
+      "description": "Tạo menu quản lý và xử lý lỗi nhập, dữ liệu thử",
+      "hint": "Tách thành nhiều hàm",
+      "difficulty": "Khó",
+      "points": 35,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C34-01",
+      "lesson": 33,
+      "module": 8,
+      "title": "To-do CLI",
+      "description": "Xây chương trình quản lý công việc có trạng thái và lưu tệp",
+      "hint": "struct + enum",
+      "difficulty": "Dễ",
+      "points": 10,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C34-02",
+      "lesson": 33,
+      "module": 8,
+      "title": "Quản lý chi tiêu",
+      "description": "Tạo CLI ghi thu/chi, xem theo danh mục và thống kê",
+      "hint": "file + struct",
+      "difficulty": "Dễ",
+      "points": 10,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C34-03",
+      "lesson": 33,
+      "module": 8,
+      "title": "Mini shell",
+      "description": "Cho người dùng nhập các lệnh đơn giản help, time, exit",
+      "hint": "strcmp, fgets",
+      "difficulty": "Vừa",
+      "points": 20,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C34-04",
+      "lesson": 33,
+      "module": 8,
+      "title": "Bộ từ điển",
+      "description": "Tạo tra cứu từ tiếng Anh đơn giản có thêm sửa xóa",
+      "hint": "Dùng danh sách liên kết",
+      "difficulty": "Vừa",
+      "points": 20,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C34-05",
+      "lesson": 33,
+      "module": 8,
+      "title": "Mini game đoán số",
+      "description": "Tạo game nhiều cấp độ, điểm và bảng xếp hạng lưu tệp",
+      "hint": "rand, srand, file",
+      "difficulty": "Vừa",
+      "points": 20,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C34-06",
+      "lesson": 33,
+      "module": 8,
+      "title": "Text analyzer",
+      "description": "Thống kê số dòng, từ, ký tự, tần suất chữ trong tệp",
+      "hint": "fgetc, isalpha",
+      "difficulty": "Khó",
+      "points": 35,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    },
+    {
+      "id": "C34-07",
+      "lesson": 33,
+      "module": 8,
+      "title": "Đồ án tự chọn",
+      "description": "Tự tạo dự án C 300+ dòng có README, test, báo cáo lỗi và lưu dữ liệu",
+      "hint": "Sử dụng ít nhất 4 nhóm kiến thức",
+      "difficulty": "Khó",
+      "points": 35,
+      "code": "#include <stdio.h>\n\nint main(void) {\n    // Viet loi giai cua ban tai day\n\n    return 0;\n}\n"
+    }
+  ],
+  "quizzes": [
+    {
+      "lesson": 0,
+      "module": 0,
+      "question": "Hàm bắt đầu chương trình C là gì?",
+      "options": [
+        "main",
+        "start",
+        "run"
+      ],
+      "answer": 0,
+      "explanation": "Chương trình C độc lập thường bắt đầu ở main."
+    },
+    {
+      "lesson": 0,
+      "module": 0,
+      "question": "Header khai báo printf là?",
+      "options": [
+        "string.h",
+        "math.h",
+        "stdio.h"
+      ],
+      "answer": 2,
+      "explanation": "stdio.h khai báo các hàm nhập xuất tiêu chuẩn."
+    },
+    {
+      "lesson": 1,
+      "module": 0,
+      "question": "Kiểu thường lưu số nguyên là?",
+      "options": [
+        "char",
+        "int",
+        "double"
+      ],
+      "answer": 1,
+      "explanation": "int dùng cho số nguyên trong giới hạn kiểu."
+    },
+    {
+      "lesson": 1,
+      "module": 0,
+      "question": "Ký tự được đặt trong dấu nào?",
+      "options": [
+        "Nháy đơn '",
+        "Nháy kép \"",
+        "Ngoặc nhọn"
+      ],
+      "answer": 0,
+      "explanation": "Ví dụ char c='A'."
+    },
+    {
+      "lesson": 2,
+      "module": 0,
+      "question": "Đặc tả scanf cho double là?",
+      "options": [
+        "%f",
+        "%d",
+        "%lf"
+      ],
+      "answer": 2,
+      "explanation": "scanf dùng %lf với con trỏ double."
+    },
+    {
+      "lesson": 2,
+      "module": 0,
+      "question": "Muốn nhập nhiều từ trong một dòng nên dùng?",
+      "options": [
+        "getchar một lần",
+        "fgets",
+        "scanf %s"
+      ],
+      "answer": 1,
+      "explanation": "fgets đọc cả dấu cách."
+    },
+    {
+      "lesson": 3,
+      "module": 0,
+      "question": "Phép 7/2 với hai int cho kết quả?",
+      "options": [
+        "3",
+        "3.5",
+        "4"
+      ],
+      "answer": 0,
+      "explanation": "Chia số nguyên bỏ phần phân số."
+    },
+    {
+      "lesson": 3,
+      "module": 0,
+      "question": "Toán tử lấy dư là?",
+      "options": [
+        "/",
+        "^",
+        "%"
+      ],
+      "answer": 2,
+      "explanation": "% trả phần dư phép chia nguyên."
+    },
+    {
+      "lesson": 4,
+      "module": 1,
+      "question": "Toán tử kiểm tra bằng nhau là?",
+      "options": [
+        "!=",
+        "==",
+        "="
+      ],
+      "answer": 1,
+      "explanation": "= là phép gán; == là so sánh."
+    },
+    {
+      "lesson": 4,
+      "module": 1,
+      "question": "Dấu && thể hiện?",
+      "options": [
+        "Và logic",
+        "Hoặc logic",
+        "Phủ định"
+      ],
+      "answer": 0,
+      "explanation": "Hai vế phải đúng để && là đúng."
+    },
+    {
+      "lesson": 5,
+      "module": 1,
+      "question": "Dùng lệnh nào thoát khỏi case?",
+      "options": [
+        "continue",
+        "return 100",
+        "break"
+      ],
+      "answer": 2,
+      "explanation": "break ngắt switch hiện tại."
+    },
+    {
+      "lesson": 5,
+      "module": 1,
+      "question": "Trong switch, nhánh mặc định là?",
+      "options": [
+        "otherwise",
+        "default",
+        "else"
+      ],
+      "answer": 1,
+      "explanation": "default xử lý trường hợp chưa khớp."
+    },
+    {
+      "lesson": 6,
+      "module": 1,
+      "question": "Vòng for phù hợp nhất khi?",
+      "options": [
+        "Biết số lần lặp",
+        "Chỉ có điều kiện kết thúc mơ hồ",
+        "Không cần cập nhật biến"
+      ],
+      "answer": 0,
+      "explanation": "for dễ trình bày biến đếm."
+    },
+    {
+      "lesson": 6,
+      "module": 1,
+      "question": "Lệnh continue làm gì?",
+      "options": [
+        "Thoát chương trình",
+        "Thoát mọi vòng",
+        "Bỏ qua phần còn lại của vòng hiện tại"
+      ],
+      "answer": 2,
+      "explanation": "continue chuyển sang bước lặp kế."
+    },
+    {
+      "lesson": 7,
+      "module": 1,
+      "question": "Vòng nào chạy thân ít nhất một lần?",
+      "options": [
+        "for",
+        "do while",
+        "while"
+      ],
+      "answer": 1,
+      "explanation": "do while kiểm tra điều kiện sau thân vòng lặp."
+    },
+    {
+      "lesson": 7,
+      "module": 1,
+      "question": "GCD bằng Euclid thường dùng?",
+      "options": [
+        "Phép dư %",
+        "Lũy thừa",
+        "Truy cập con trỏ"
+      ],
+      "answer": 0,
+      "explanation": "Euclid liên tục lấy phần dư."
+    },
+    {
+      "lesson": 8,
+      "module": 2,
+      "question": "Câu lệnh trả kết quả từ hàm?",
+      "options": [
+        "break",
+        "continue",
+        "return"
+      ],
+      "answer": 2,
+      "explanation": "return kết thúc hàm và có thể trả giá trị."
+    },
+    {
+      "lesson": 8,
+      "module": 2,
+      "question": "Prototype hàm dùng để?",
+      "options": [
+        "In dữ liệu",
+        "Khai báo hàm trước khi gọi",
+        "Lặp mã"
+      ],
+      "answer": 1,
+      "explanation": "Compiler biết kiểu trả về và tham số."
+    },
+    {
+      "lesson": 9,
+      "module": 2,
+      "question": "Biến static cục bộ?",
+      "options": [
+        "Giữ giá trị qua nhiều lần gọi",
+        "Luôn được reset",
+        "Không thể đọc"
+      ],
+      "answer": 0,
+      "explanation": "static có thời gian lưu trữ tĩnh."
+    },
+    {
+      "lesson": 9,
+      "module": 2,
+      "question": "const có nghĩa gì?",
+      "options": [
+        "Hàm tự động static",
+        "Biến trỏ luôn NULL",
+        "Không được sửa qua tên đối tượng"
+      ],
+      "answer": 2,
+      "explanation": "const giới hạn thay đổi đối tượng."
+    },
+    {
+      "lesson": 10,
+      "module": 2,
+      "question": "Đệ quy phải có?",
+      "options": [
+        "Mảng",
+        "Điểm dừng",
+        "Con trỏ"
+      ],
+      "answer": 1,
+      "explanation": "Thiếu điểm dừng có thể tràn stack."
+    },
+    {
+      "lesson": 10,
+      "module": 2,
+      "question": "Vì sao Fibonacci đệ quy ngây thơ chậm?",
+      "options": [
+        "Lặp lại nhiều phép tính",
+        "Không có phép cộng",
+        "Không cần điểm dừng"
+      ],
+      "answer": 0,
+      "explanation": "Nhiều nhánh tính lại cùng bài toán."
+    },
+    {
+      "lesson": 11,
+      "module": 2,
+      "question": "Số nguyên tố phải?",
+      "options": [
+        "Bất kỳ số dương",
+        "Luôn lẻ",
+        "Lớn hơn hoặc bằng 2"
+      ],
+      "answer": 2,
+      "explanation": "2 là nguyên tố chẵn duy nhất."
+    },
+    {
+      "lesson": 11,
+      "module": 2,
+      "question": "Kiểm tra ước tối ưu tới?",
+      "options": [
+        "n giai thừa",
+        "Căn bậc hai của n",
+        "n bình phương"
+      ],
+      "answer": 1,
+      "explanation": "Ước lớn có ước cặp nhỏ tương ứng."
+    },
+    {
+      "lesson": 12,
+      "module": 3,
+      "question": "Chỉ số đầu mảng trong C?",
+      "options": [
+        "0",
+        "1",
+        "-1"
+      ],
+      "answer": 0,
+      "explanation": "Mảng truy cập từ 0."
+    },
+    {
+      "lesson": 12,
+      "module": 3,
+      "question": "Kích thước a[5] có chỉ số hợp lệ tối đa?",
+      "options": [
+        "5",
+        "6",
+        "4"
+      ],
+      "answer": 2,
+      "explanation": "Truy cập a[5] vượt giới hạn."
+    },
+    {
+      "lesson": 13,
+      "module": 3,
+      "question": "Ma trận int a[2][3] có bao nhiêu phần tử?",
+      "options": [
+        "9",
+        "6",
+        "5"
+      ],
+      "answer": 1,
+      "explanation": "2 hàng x 3 cột."
+    },
+    {
+      "lesson": 13,
+      "module": 3,
+      "question": "Đường chéo chính của a là?",
+      "options": [
+        "a[i][i]",
+        "a[i][n]",
+        "a[n][i]"
+      ],
+      "answer": 0,
+      "explanation": "Trên ma trận vuông, hai chỉ số bằng nhau."
+    },
+    {
+      "lesson": 14,
+      "module": 3,
+      "question": "Chuỗi C kết thúc bằng?",
+      "options": [
+        "\\\\n",
+        "EOF",
+        "\\\\0"
+      ],
+      "answer": 2,
+      "explanation": "Ký tự null xác định cuối chuỗi."
+    },
+    {
+      "lesson": 14,
+      "module": 3,
+      "question": "So sánh nội dung hai chuỗi nên dùng?",
+      "options": [
+        "sizeof",
+        "strcmp",
+        "=="
+      ],
+      "answer": 1,
+      "explanation": "strcmp so sánh ký tự theo từ điển."
+    },
+    {
+      "lesson": 15,
+      "module": 3,
+      "question": "Hàm isdigit nằm trong?",
+      "options": [
+        "ctype.h",
+        "string.h",
+        "stdio.h"
+      ],
+      "answer": 0,
+      "explanation": "ctype.h cung cấp hàm kiểm tra ký tự."
+    },
+    {
+      "lesson": 15,
+      "module": 3,
+      "question": "'a' và 97 trong ASCII?",
+      "options": [
+        "Không liên quan",
+        "Cả hai là con trỏ",
+        "Cùng mã trong ASCII"
+      ],
+      "answer": 2,
+      "explanation": "Mã ASCII của a thường là 97."
+    },
+    {
+      "lesson": 16,
+      "module": 4,
+      "question": "Toán tử lấy địa chỉ của biến?",
+      "options": [
+        "%",
+        "&",
+        "*"
+      ],
+      "answer": 1,
+      "explanation": "&x trả địa chỉ của x."
+    },
+    {
+      "lesson": 16,
+      "module": 4,
+      "question": "Con trỏ NULL được phép giải tham chiếu?",
+      "options": [
+        "Không",
+        "Có",
+        "Chỉ khi int"
+      ],
+      "answer": 0,
+      "explanation": "Giải tham chiếu NULL không hợp lệ."
+    },
+    {
+      "lesson": 17,
+      "module": 4,
+      "question": "Biểu thức a[i] tương đương?",
+      "options": [
+        "*a+i",
+        "&a+i",
+        "*(a+i)"
+      ],
+      "answer": 2,
+      "explanation": "Phép toán con trỏ đúng loại dữ liệu."
+    },
+    {
+      "lesson": 17,
+      "module": 4,
+      "question": "Khi truyền mảng vào hàm, sizeof(a) thường là?",
+      "options": [
+        "Tổng byte mảng gốc",
+        "Kích thước con trỏ",
+        "Tổng số phần tử"
+      ],
+      "answer": 1,
+      "explanation": "Tham số mảng được điều chỉnh thành tham số con trỏ."
+    },
+    {
+      "lesson": 18,
+      "module": 4,
+      "question": "Con trỏ hàm có thể dùng để?",
+      "options": [
+        "Truyền callback",
+        "Lưu văn bản",
+        "Tự cấp phát"
+      ],
+      "answer": 0,
+      "explanation": "Hàm có thể được truyền như tham số."
+    },
+    {
+      "lesson": 18,
+      "module": 4,
+      "question": "qsort cần gì để quyết định thứ tự?",
+      "options": [
+        "fopen",
+        "malloc",
+        "Hàm so sánh"
+      ],
+      "answer": 2,
+      "explanation": "Comparator trả âm,0,dương."
+    },
+    {
+      "lesson": 19,
+      "module": 4,
+      "question": "malloc trả gì khi thất bại?",
+      "options": [
+        "0 byte luôn hợp lệ",
+        "NULL",
+        "-1"
+      ],
+      "answer": 1,
+      "explanation": "Kiểm tra NULL trước khi dereference."
+    },
+    {
+      "lesson": 19,
+      "module": 4,
+      "question": "Sau free(p) nên làm gì?",
+      "options": [
+        "Không dùng vùng nhớ đã giải phóng",
+        "Đọc *p",
+        "Gọi free(p) lần hai"
+      ],
+      "answer": 0,
+      "explanation": "Dùng sau giải phóng là lỗi bộ nhớ."
+    },
+    {
+      "lesson": 20,
+      "module": 5,
+      "question": "Truy cập trường của con trỏ struct dùng?",
+      "options": [
+        ".",
+        "::",
+        "->"
+      ],
+      "answer": 2,
+      "explanation": "p->field tương đương (*p).field."
+    },
+    {
+      "lesson": 20,
+      "module": 5,
+      "question": "Gom nhiều trường thành đối tượng dùng?",
+      "options": [
+        "for",
+        "struct",
+        "break"
+      ],
+      "answer": 1,
+      "explanation": "struct phù hợp bản ghi."
+    },
+    {
+      "lesson": 21,
+      "module": 5,
+      "question": "enum thường dùng để?",
+      "options": [
+        "Đặt tên trạng thái nguyên",
+        "Cấp phát bộ nhớ",
+        "Ghi file"
+      ],
+      "answer": 0,
+      "explanation": "enum tạo các hằng số nguyên có tên."
+    },
+    {
+      "lesson": 21,
+      "module": 5,
+      "question": "Các trường của union?",
+      "options": [
+        "Luôn ở bộ nhớ riêng",
+        "Luôn có cùng giá trị",
+        "Chia sẻ cùng vùng nhớ"
+      ],
+      "answer": 2,
+      "explanation": "union có một vùng nhớ dùng chung."
+    },
+    {
+      "lesson": 22,
+      "module": 5,
+      "question": "Mở tệp đọc văn bản bằng chế độ?",
+      "options": [
+        "a",
+        "r",
+        "w"
+      ],
+      "answer": 1,
+      "explanation": "w ghi đè, a thêm."
+    },
+    {
+      "lesson": 22,
+      "module": 5,
+      "question": "fopen trả NULL khi?",
+      "options": [
+        "Mở tệp thất bại",
+        "Đọc xong file",
+        "In thành công"
+      ],
+      "answer": 0,
+      "explanation": "Phải kiểm tra trước khi đọc ghi."
+    },
+    {
+      "lesson": 23,
+      "module": 5,
+      "question": "Dòng #include dùng để?",
+      "options": [
+        "Biên dịch thành máy ngay",
+        "Chạy vòng lặp",
+        "Đưa nội dung header vào khi tiền xử lý"
+      ],
+      "answer": 2,
+      "explanation": "#include xử lý trước quá trình biên dịch."
+    },
+    {
+      "lesson": 23,
+      "module": 5,
+      "question": "Include guard giúp?",
+      "options": [
+        "Mở file",
+        "Tránh khai báo header trùng trong một đơn vị dịch",
+        "Tăng CPU"
+      ],
+      "answer": 1,
+      "explanation": "#ifndef #define #endif."
+    },
+    {
+      "lesson": 24,
+      "module": 6,
+      "question": "Binary search yêu cầu?",
+      "options": [
+        "Mảng có thứ tự phù hợp",
+        "Mảng bất kỳ",
+        "Không cần so sánh"
+      ],
+      "answer": 0,
+      "explanation": "Tìm nhị phân dựa vào thứ tự."
+    },
+    {
+      "lesson": 24,
+      "module": 6,
+      "question": "Độ phức tạp tìm tuyến tính xấu nhất?",
+      "options": [
+        "O(1)",
+        "O(log n)",
+        "O(n)"
+      ],
+      "answer": 2,
+      "explanation": "Có thể cần xem toàn bộ n phần tử."
+    },
+    {
+      "lesson": 25,
+      "module": 6,
+      "question": "Selection sort điển hình có độ phức tạp?",
+      "options": [
+        "O(1)",
+        "O(n²)",
+        "O(log n)"
+      ],
+      "answer": 1,
+      "explanation": "Hai vòng lặp lồng nhau."
+    },
+    {
+      "lesson": 25,
+      "module": 6,
+      "question": "qsort nằm trong thư viện?",
+      "options": [
+        "stdlib.h",
+        "stdio.h",
+        "ctype.h"
+      ],
+      "answer": 0,
+      "explanation": "qsort thuộc stdlib.h."
+    },
+    {
+      "lesson": 26,
+      "module": 6,
+      "question": "Node danh sách liên kết đơn chứa?",
+      "options": [
+        "Chỉ index",
+        "Chỉ dữ liệu",
+        "Dữ liệu và con trỏ next"
+      ],
+      "answer": 2,
+      "explanation": "next dẫn đến node tiếp theo."
+    },
+    {
+      "lesson": 26,
+      "module": 6,
+      "question": "Khi xóa node, cần?",
+      "options": [
+        "Giữ con trỏ treo",
+        "Sửa liên kết và free đúng node",
+        "Chỉ in thông báo"
+      ],
+      "answer": 1,
+      "explanation": "Giải phóng và nối lại an toàn."
+    },
+    {
+      "lesson": 27,
+      "module": 6,
+      "question": "Stack là cấu trúc?",
+      "options": [
+        "LIFO",
+        "FIFO",
+        "Random"
+      ],
+      "answer": 0,
+      "explanation": "Vào sau ra trước."
+    },
+    {
+      "lesson": 27,
+      "module": 6,
+      "question": "Queue là cấu trúc?",
+      "options": [
+        "LIFO",
+        "Sắp xếp tăng",
+        "FIFO"
+      ],
+      "answer": 2,
+      "explanation": "Vào trước ra trước."
+    },
+    {
+      "lesson": 28,
+      "module": 7,
+      "question": "Đặt bit k bằng 1 dùng?",
+      "options": [
+        "x ^ x",
+        "x | (1u<<k)",
+        "x & ~(1u<<k)"
+      ],
+      "answer": 1,
+      "explanation": "OR bật bit mà không ảnh hưởng bit khác."
+    },
+    {
+      "lesson": 28,
+      "module": 7,
+      "question": "XOR với một bit 1 có tác dụng?",
+      "options": [
+        "Đảo bit tương ứng",
+        "Luôn bật",
+        "Luôn tắt"
+      ],
+      "answer": 0,
+      "explanation": "XOR dùng toggle."
+    },
+    {
+      "lesson": 29,
+      "module": 7,
+      "question": "void* cần điều gì trước khi đọc dữ liệu?",
+      "options": [
+        "Không cần kiểm tra",
+        "Dùng trực tiếp toán tử ++ chuẩn C",
+        "Diễn giải thành kiểu phù hợp"
+      ],
+      "answer": 2,
+      "explanation": "Cần kiểu đối tượng đúng."
+    },
+    {
+      "lesson": 29,
+      "module": 7,
+      "question": "Comparator của qsort trả?",
+      "options": [
+        "Luôn 1",
+        "Số âm 0 hoặc dương",
+        "Chỉ true false"
+      ],
+      "answer": 1,
+      "explanation": "Âm,0,dương biểu diễn quan hệ thứ tự."
+    },
+    {
+      "lesson": 30,
+      "module": 7,
+      "question": "scanf có thể báo số giá trị đọc thành công?",
+      "options": [
+        "Có",
+        "Không",
+        "Luôn trả 1"
+      ],
+      "answer": 0,
+      "explanation": "Kiểm tra số mục đọc thành công."
+    },
+    {
+      "lesson": 30,
+      "module": 7,
+      "question": "Cờ -Wall của GCC dùng để?",
+      "options": [
+        "Chạy nhanh gấp đôi",
+        "Bật debug GUI",
+        "Bật nhóm cảnh báo thường gặp"
+      ],
+      "answer": 2,
+      "explanation": "Cảnh báo giúp phát hiện lỗi sớm."
+    },
+    {
+      "lesson": 31,
+      "module": 8,
+      "question": "Quản lý sinh viên nên lưu mỗi sinh viên trong?",
+      "options": [
+        "printf",
+        "struct",
+        "switch"
+      ],
+      "answer": 1,
+      "explanation": "struct gom các trường."
+    },
+    {
+      "lesson": 31,
+      "module": 8,
+      "question": "Giá trị GPA hợp lệ cần?",
+      "options": [
+        "Được kiểm tra theo thang điểm dùng",
+        "Luôn âm",
+        "Không cần kiểm tra"
+      ],
+      "answer": 0,
+      "explanation": "Validate dữ liệu trước khi lưu."
+    },
+    {
+      "lesson": 32,
+      "module": 8,
+      "question": "Số lượng sách tồn kho nên?",
+      "options": [
+        "Âm sau khi mượn",
+        "Luôn bằng 1",
+        "Không âm"
+      ],
+      "answer": 2,
+      "explanation": "Ngăn mượn khi hết hàng."
+    },
+    {
+      "lesson": 32,
+      "module": 8,
+      "question": "Chế độ a của fopen là?",
+      "options": [
+        "Chỉ đọc",
+        "Ghi thêm cuối tệp",
+        "Xóa tệp"
+      ],
+      "answer": 1,
+      "explanation": "a dùng append."
+    },
+    {
+      "lesson": 33,
+      "module": 8,
+      "question": "Bộ nhớ malloc phải?",
+      "options": [
+        "free khi không dùng nữa",
+        "Để tự biến mất ngay",
+        "Không cần kiểm tra"
+      ],
+      "answer": 0,
+      "explanation": "Tránh rò rỉ bộ nhớ."
+    },
+    {
+      "lesson": 33,
+      "module": 8,
+      "question": "Dự án C hoàn chỉnh cần?",
+      "options": [
+        "Chỉ có main trống",
+        "Chỉ có README",
+        "Biên dịch, thử dữ liệu, xử lý lỗi"
+      ],
+      "answer": 2,
+      "explanation": "Kiểm thử là phần của sản phẩm."
+    }
+  ],
+  "videos": [
+    {
+      "title": "28Tech — Nhập môn C: kiểu dữ liệu, printf/scanf",
+      "channel": "28Tech",
+      "language": "Tiếng Việt",
+      "duration": "Hơn 1 giờ",
+      "id": "vpqMmfkSAMo",
+      "description": "Bài mở đầu: cài Dev-C++, kiểu dữ liệu, biến, nhập xuất, toán tử."
+    },
+    {
+      "title": "28Tech — Giải bài tập vòng lặp C",
+      "channel": "28Tech",
+      "language": "Tiếng Việt",
+      "duration": "Bài luyện tập",
+      "id": "E9YQBP1yTfc",
+      "description": "Thực hành bảng cửu chương, chữ số, số nguyên tố, UCLN và hơn nữa."
+    },
+    {
+      "title": "Bro Code — C Programming Full Course (2025)",
+      "channel": "Bro Code",
+      "language": "English",
+      "duration": "6 giờ 54 phút",
+      "id": "xND0t1pr3KY",
+      "description": "Khóa miễn phí từ nhập môn đến con trỏ, malloc, file và dự án thực hành."
+    },
+    {
+      "title": "freeCodeCamp — C Programming Tutorial for Beginners",
+      "channel": "freeCodeCamp",
+      "language": "English",
+      "duration": "3 giờ 45 phút",
+      "id": "KJgsSFOSQv0",
+      "description": "Học nhập xuất, hàm, mảng, vòng lặp, struct, con trỏ và file."
+    }
+  ]
+}</script>
+<script>
+'use strict';
+const DATA = JSON.parse(document.getElementById('content-data').textContent);
+const STORE_KEY='c_academy_learning_2026_v1';
+const defaults={learned:{},done:{},drafts:{},stdin:{},notes:{},quizResults:{},theme:'light',lastLesson:0,lastExercise:'C01-01'};
+let state;
+try{state={...defaults,...JSON.parse(localStorage.getItem(STORE_KEY)||'{}')};}catch(e){state={...defaults};}
+for(const key of ['learned','done','drafts','stdin','notes','quizResults']) if(!state[key]||typeof state[key]!=='object')state[key]={};
+let view='home', activeLesson=Math.max(0,Math.min(33,Number(state.lastLesson)||0)), activeExercise=DATA.exercises.find(x=>x.id===state.lastExercise)?.id||'C01-01';
+let exerciseSearch='', exerciseModule='all', exerciseDifficulty='all', exerciseLimit=18, roadmapSelected='all', quizModule='0', quizAnswers={}, quizRevealed=false, videoActive='', hintVisible=false, outputText='Nhấn “▶ Chạy code” để biên dịch và xem kết quả ở đây.', outputStatus='', running=false, compilerListCache=null;
+const $=s=>document.querySelector(s);
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const lesson=x=>DATA.lessons[x], ex=x=>DATA.exercises.find(e=>e.id===x), mod=x=>DATA.modules[x];
+const nDone=()=>Object.values(state.done).filter(Boolean).length, nLearned=()=>Object.values(state.learned).filter(Boolean).length;
+const nPercent=()=>Math.round((nLearned()/DATA.lessons.length)*100);
+const pts=()=>DATA.exercises.filter(e=>state.done[e.id]).reduce((a,e)=>a+e.points,0);
+function save(){try{localStorage.setItem(STORE_KEY,JSON.stringify(state));}catch(e){toast('Không lưu được tiến độ. Kiểm tra dung lượng trình duyệt.');}}
+function toast(msg){const t=$('#toast');t.textContent=msg;t.classList.add('show');clearTimeout(toast.timer);toast.timer=setTimeout(()=>t.classList.remove('show'),3400);}
+function go(next,scroll=true){view=next;hintVisible=false;render();if(scroll)window.scrollTo({top:0,behavior:'smooth'});}
+function openLesson(i){activeLesson=Number(i);state.lastLesson=activeLesson;save();go('lesson');}
+function openExercise(id){if(!ex(id))return;activeExercise=id;activeLesson=ex(id).lesson;state.lastExercise=id;state.lastLesson=activeLesson;save();outputText='Nhấn “▶ Chạy code” để biên dịch và xem kết quả ở đây.';outputStatus='';go('lab');}
+function navItem(id,icon,label,count=''){return `<button class="nav-item ${view===id || (id==='roadmap' && view==='lesson')?'active':''}" data-action="view" data-view="${id}"><span class="nav-icon">${icon}</span>${label}${count?`<span class="nav-count">${count}</span>`:''}</button>`;}
+function renderSidebar(){
+ const nav=$('#sidebar');nav.innerHTML=`<div class="brand" data-action="view" data-view="home"><span class="brand-icon">C</span><div><strong>C ACADEMY</strong><small>LEARN • CODE • GROW</small></div></div><div class="nav-label">KHÔNG GIAN HỌC</div>${navItem('home','▦','Tổng quan')}${navItem('roadmap','▤','Lộ trình học','34')}${navItem('exercises','⌘','Kho bài tập','238')}${navItem('lab','⌨','Phòng thực hành')}${navItem('quiz','◉','Trắc nghiệm','68')}<div class="nav-label">TÀI NGUYÊN</div>${navItem('videos','▷','Video bài giảng','4')}${navItem('notes','▤','Sổ tay ghi chú')}<div class="side-bottom"><div class="side-goal"><div class="side-goal-title"><span>🎯 Tiến độ học tập</span><span>${nPercent()}%</span></div><div class="progress-bar"><div class="progress-fill" style="width:${nPercent()}%"></div></div><small>${nLearned()} / 34 bài học đã hoàn thành</small></div><div style="display:flex;gap:8px;margin-top:12px"><button class="btn btn-outline btn-sm" style="flex:1" data-action="export">↓ Xuất tiến độ</button><button class="btn btn-outline btn-sm" data-action="import">↑</button><input id="importFile" type="file" hidden accept="application/json,.json" /></div></div>`;
+ const arr=[['home','⌂','Trang chủ'],['roadmap','▤','Bài học'],['exercises','⌘','Bài tập'],['lab','⌨','Code'],['quiz','◉','Kiểm tra']];
+ $('#mobileBottom').innerHTML=arr.map(x=>`<button data-action="view" data-view="${x[0]}" class="${view===x[0]||x[0]==='roadmap'&&view==='lesson'?'active':''}"><b>${x[1]}</b>${x[2]}</button>`).join('');
+}
+function stat(label,val,foot,ico){return `<div class="stat"><div class="stat-top"><span>${label}</span><span class="stat-icon">${ico}</span></div><strong>${val}</strong><div class="stat-foot">${foot}</div></div>`;}
+function moduleCard(m){const done=DATA.lessons.filter(x=>x.module===m.id && state.learned[x.id]).length;const total=DATA.lessons.filter(x=>x.module===m.id).length;return `<article class="module-card" data-action="openModule" data-module="${m.id}" tabindex="0" role="button"><div class="module-top"><span class="module-icon">${m.number}</span><span class="pill ${done===total?'green':''}">${done===total?'Đã học xong':total+' bài học'}</span></div><h3>${esc(m.title)}</h3><p>${esc(m.subtitle)}</p><div class="module-meta"><span>${done}/${total} bài hoàn thành</span><span>↗</span></div><div class="mini-track"><i style="width:${Math.round(100*done/total)}%"></i></div></article>`;}
+function home(){const next=DATA.lessons.find(x=>!state.learned[x.id])||DATA.lessons[0];const recent=DATA.exercises.filter(x=>!state.done[x.id]).slice(0,3);
+ return `<section class="hero"><div class="hero-copy"><span class="hero-badge">✦ LỘ TRÌNH C TỪ CƠ BẢN → NÂNG CAO</span><h1>Học lập trình C.<br><span style="color:#a5b0ff">Luyện mỗi ngày, giỏi từng bước.</span></h1><p>34 bài học thực tế · 238 bài tập từ dễ đến khó<br>Viết code C, chạy thử online và theo dõi tiến độ miễn phí.</p><div class="hero-actions"><button class="btn btn-white" data-action="lesson" data-lesson="${next.id}">▶ Bắt đầu bài ${next.id+1}</button><button class="btn btn-glass" data-action="view" data-view="roadmap">Khám phá lộ trình ↗</button></div></div><div class="hero-terminal"><div class="terminal-head"><i class="dot"></i><i class="dot"></i><i class="dot"></i><span>hello_world.c</span></div><div class="terminal-code"><span class="tok-blue">#include</span> &lt;stdio.h&gt;\n\n<span class="tok-yellow">int</span> <span class="tok-green">main</span>(void) {\n  printf(<span class="tok-green">"Hello, future dev!\\n"</span>);\n  <span class="tok-blue">return</span> 0;\n}\n\n<span class="tok-green">✓ Ready to compile</span></div></div></section>
+ <div class="stats-grid">${stat('Bài học',''+DATA.lessons.length,`${nLearned()} bài đã học`,'▤')}${stat('Bài thực hành',''+DATA.exercises.length,`${nDone()} bài đã hoàn thành`,'⌘')}${stat('Điểm luyện tập',pts().toLocaleString('vi-VN'), 'Tự đánh dấu sau khi kiểm tra', '★')}${stat('Kiểm tra nhanh',''+DATA.quizzes.length,'9 chương học khác nhau','◉')}</div>
+ <div class="section-heading"><h2>📚 Chương trình học tập</h2><button class="text-link" data-action="view" data-view="roadmap">Xem toàn bộ lộ trình ↗</button></div><div class="module-grid">${DATA.modules.slice(0,6).map(moduleCard).join('')}</div>
+ <div class="section-heading"><h2>🚀 Tiếp tục hành trình</h2><button class="text-link" data-action="view" data-view="exercises">Tất cả bài tập ↗</button></div><div class="layout-two"><div class="panel"><h3>Gợi ý bài luyện hôm nay</h3>${recent.map(x=>`<div class="activity"><span class="activity-icon">⌨</span><div><strong>${esc(x.title)}</strong><small>${esc(lesson(x.lesson).title)} · ${x.difficulty}</small></div><button class="btn btn-outline btn-sm" data-action="exercise" data-id="${x.id}">Làm bài</button></div>`).join('')}<div class="notice" style="margin-top:16px"><span>💡</span><div>Học 30–60 phút mỗi ngày: <strong>15 phút lý thuyết → 30 phút tự viết code → 10 phút trắc nghiệm.</strong> Gợi ý sẽ được ẩn cho đến khi bạn cần.</div></div></div><div class="panel"><h3>🎯 Cột mốc đầu tiên</h3><p>Để có nền tảng C vững chắc, hãy hoàn thành 4 bài đầu của chương Nhập môn, sau đó luyện tối thiểu 10 bài thực hành.</p><div class="steps"><span class="step-chip">① Hiểu cú pháp</span><span class="step-chip">② Viết code</span><span class="step-chip">③ Chạy thử</span><span class="step-chip">④ Tự sửa lỗi</span></div><button style="margin-top:18px" class="btn btn-primary" data-action="lesson" data-lesson="0">Học Hello World →</button></div></div>`;
+}
+function roadmap(){const mods=roadmapSelected==='all'?DATA.modules:DATA.modules.filter(m=>String(m.id)===roadmapSelected);return `<h1 class="page-title">Lộ trình học lập trình C</h1><p class="page-sub">34 bài giảng trong 9 chương, đi từ nền tảng C đến cấu trúc dữ liệu và dự án thực tế. Học tuần tự hoặc chọn chủ đề bạn cần.</p><div class="filters"><select class="field" id="roadmapModule"><option value="all">Tất cả 9 chương</option>${DATA.modules.map(m=>`<option value="${m.id}" ${roadmapSelected===String(m.id)?'selected':''}>${esc(m.title)}</option>`).join('')}</select><button class="btn btn-outline" data-action="view" data-view="exercises">⌘ 238 bài luyện tập</button></div>
+${mods.map(m=>`<section style="margin-bottom:25px"><div class="section-heading"><h2><span class="pill">Chương ${m.number}</span> &nbsp;${esc(m.title)}</h2><span class="muted" style="font-size:10px">${DATA.lessons.filter(l=>l.module===m.id&&state.learned[l.id]).length}/${DATA.lessons.filter(l=>l.module===m.id).length} hoàn thành</span></div><div class="module-grid">${DATA.lessons.filter(l=>l.module===m.id).map(l=>`<article class="lesson-card" style="padding:18px;cursor:pointer" data-action="lesson" data-lesson="${l.id}" tabindex="0" role="button"><div style="display:flex;justify-content:space-between;align-items:center"><span class="pill">Bài ${String(l.id+1).padStart(2,'0')}</span>${state.learned[l.id]?'<span class="badge-ok">✓ Đã học</span>':`<span class="muted" style="font-size:10px">◷ ${l.duration} phút</span>`}</div><h3 style="font-size:13px;margin:13px 0 7px">${esc(l.title)}</h3><p style="font-size:11px;color:var(--muted);margin:0 0 17px;min-height:37px">${esc(l.summary)}</p><div style="font-size:10px;color:var(--blue);font-weight:800">Học bài &amp; luyện 7 bài tập ↗</div></article>`).join('')}</div></section>`).join('')}`;}
+function lessonPage(){const l=lesson(activeLesson),lx=DATA.exercises.filter(e=>e.lesson===l.id);return `<div class="section-heading" style="margin:0 0 18px"><div><div class="eyebrow">KHÓA HỌC / ${esc(mod(l.module).title)}</div><h1 class="page-title" style="margin-top:5px">Bài giảng & kiến thức</h1></div><button class="btn btn-outline btn-sm" data-action="view" data-view="roadmap">← Lộ trình</button></div><div class="lesson-layout"><aside class="panel lesson-sidebar">${DATA.modules.map(m=>`<div class="module-group"><div class="module-group-label">CHƯƠNG ${m.number} • ${esc(m.title)}</div>${DATA.lessons.filter(x=>x.module===m.id).map(x=>`<button class="lesson-link ${x.id===l.id?'active':''}" data-action="lesson" data-lesson="${x.id}"><span class="lesson-num">${state.learned[x.id]?'✓':x.id+1}</span><span>${esc(x.title)}</span></button>`).join('')}</div>`).join('')}</aside><article class="panel lesson-body"><div class="lesson-detail-meta"><span class="pill">Bài ${String(l.id+1).padStart(2,'0')}</span><span class="pill ${l.level==='Dễ'?'green':l.level==='Khó'?'orange':''}">${esc(l.level)}</span><span class="muted" style="font-size:10px">◷ ${l.duration} phút đọc</span></div><h2>${esc(l.title)}</h2><p style="font-size:12px;color:var(--muted);line-height:2">${esc(l.summary)}</p><hr class="small-divider"><h3>01. Kiến thức trọng tâm</h3>${l.concepts.map(c=>`<div class="concept-item"><span class="check-circle">✓</span><span>${esc(c)}</span></div>`).join('')}<div style="margin:16px 0"><a class="btn btn-outline btn-sm" href="https://www.youtube.com/watch?v=${l.video}" target="_blank" rel="noopener noreferrer">▶ Video giảng liên quan ↗</a></div><h3>02. Ví dụ minh họa</h3><div class="code-window"><div class="code-top"><span>● ví dụ ${l.id+1}.c</span><button style="background:transparent;border:0;color:#b3c7ff;cursor:pointer" data-action="exampleCopy" data-lesson="${l.id}">Sao chép ↗</button></div><pre>${esc(l.code)}</pre></div><div class="warning">⚠️ <strong>Lỗi thường gặp:</strong> ${esc(l.pitfall)}</div><div class="section-heading"><h3 style="margin:0">03. Thử thách áp dụng</h3><span class="muted" style="font-size:10px">7 bài tập</span></div>${lx.slice(0,4).map(e=>`<div class="answer-card"><span class="pill ${e.difficulty==='Dễ'?'green':e.difficulty==='Khó'?'orange':''}">${e.difficulty}</span><div><strong>${esc(e.title)}</strong><small>${esc(e.description)}</small></div><button class="btn btn-outline btn-sm" data-action="exercise" data-id="${e.id}">Code ↗</button></div>`).join('')}<div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;margin-top:24px"><button class="btn ${state.learned[l.id]?'btn-success':'btn-primary'}" data-action="toggleLearn" data-lesson="${l.id}">${state.learned[l.id]?'✓ Đã hoàn thành bài học':'✓ Đánh dấu đã học'}</button><div class="pills"><button class="btn btn-outline" data-action="lesson" data-lesson="${Math.max(0,l.id-1)}" ${l.id===0?'disabled':''}>← Trước</button><button class="btn btn-outline" data-action="lesson" data-lesson="${Math.min(DATA.lessons.length-1,l.id+1)}" ${l.id===DATA.lessons.length-1?'disabled':''}>Tiếp theo →</button></div></div></article></div>`;}
+function filteredExercises(){return DATA.exercises.filter(e=>(exerciseModule==='all'||String(e.module)===exerciseModule)&&(exerciseDifficulty==='all'||e.difficulty===exerciseDifficulty)&&(!exerciseSearch||(`${e.id} ${e.title} ${e.description} ${lesson(e.lesson).title}`).toLocaleLowerCase('vi').includes(exerciseSearch.toLocaleLowerCase('vi'))));}
+function exerciseCards(){let f=filteredExercises();return `<div class="filter-count">Tìm thấy <strong>${f.length}</strong> bài tập · Hiển thị ${Math.min(f.length,exerciseLimit)}</div><div class="exercise-grid">${f.slice(0,exerciseLimit).map(e=>`<article class="exercise-card" data-action="exercise" data-id="${e.id}" tabindex="0" role="button"><div class="exercise-meta"><span class="exercise-id">${e.id} • ${esc(lesson(e.lesson).title)}</span>${state.done[e.id]?'<span class="pill green">✓ Đã làm</span>':`<span class="pill ${e.difficulty==='Dễ'?'green':e.difficulty==='Khó'?'orange':''}">${e.difficulty}</span>`}</div><h3>${esc(e.title)}</h3><p>${esc(e.description)}</p><div class="exercise-meta"><span class="muted" style="font-size:10px">★ ${e.points} XP</span><span style="font-size:10px;font-weight:800;color:var(--blue)">Viết code →</span></div></article>`).join('')}</div>${f.length>exerciseLimit?'<div style="text-align:center;margin-top:20px"><button class="btn btn-outline" data-action="moreExercises">Hiển thị thêm 24 bài ↓</button></div>':''}${!f.length?'<div class="empty"><span>⌕</span>Không tìm thấy bài nào. Hãy đổi bộ lọc.</div>':''}`;}
+function exercisesPage(){return `<h1 class="page-title">Kho 238 bài tập thực hành</h1><p class="page-sub">Mỗi bài có yêu cầu riêng, gợi ý chỉ mở khi cần và phòng lab chạy C online. Hãy tự viết bài trước khi xem gợi ý.</p><div class="filters"><input class="field filter-search" id="exerciseSearch" placeholder="⌕ Tìm theo tên, kiến thức, mã bài..." value="${esc(exerciseSearch)}"><select class="field" id="exerciseModule"><option value="all">Tất cả chương</option>${DATA.modules.map(m=>`<option value="${m.id}" ${exerciseModule===String(m.id)?'selected':''}>${esc(m.title)}</option>`).join('')}</select><select class="field" id="exerciseDifficulty"><option value="all">Mọi độ khó</option>${['Dễ','Vừa','Khó'].map(x=>`<option value="${x}" ${exerciseDifficulty===x?'selected':''}>${x}</option>`).join('')}</select></div><div id="exerciseResults">${exerciseCards()}</div>`;}
+function getCurrentCode(){return state.drafts[activeExercise]??ex(activeExercise).code;}
+function getCurrentStdin(){return state.stdin[activeExercise]??'';}
+function labPage(){let e=ex(activeExercise),l=lesson(e.lesson);return `<div class="section-heading" style="margin:0 0 16px"><div><div class="eyebrow">PHÒNG THỰC HÀNH • ${e.id}</div><h1 class="page-title">C Coding Lab <span style="font-size:12px;color:var(--muted);font-weight:500">/ GCC online</span></h1></div><button class="btn btn-outline btn-sm" data-action="view" data-view="exercises">← Chọn bài khác</button></div><div class="lab-layout"><aside class="panel lab-task"><div class="pills"><span class="pill ${e.difficulty==='Dễ'?'green':e.difficulty==='Khó'?'orange':''}">${e.difficulty}</span><span class="pill">${e.id}</span></div><h3>${esc(e.title)}</h3><p><strong>Yêu cầu:</strong> ${esc(e.description)}</p><div class="info-box"><strong>Kiến thức cần biết</strong><div style="margin:7px 0 11px;color:var(--muted)">${esc(l.title)}</div><button class="btn btn-outline btn-sm" data-action="lesson" data-lesson="${l.id}">📖 Mở bài giảng</button></div><hr class="small-divider"><h3 style="font-size:13px">💡 Cần trợ giúp?</h3><p>Hãy suy nghĩ trước. Khi bí, mở gợi ý để định hướng cách giải.</p><button class="btn btn-outline btn-sm" data-action="hint">${hintVisible?'Ẩn gợi ý':'Hiện gợi ý (không phải lời giải)'}</button>${hintVisible?`<div class="hint-body">${esc(e.hint)}</div>`:''}<hr class="small-divider"><p style="font-size:10px">Bạn chỉ nên đánh dấu hoàn thành sau khi chạy và kiểm tra kết quả với nhiều trường hợp nhập.</p><button style="width:100%" class="btn ${state.done[e.id]?'btn-success':'btn-primary'}" data-action="toggleDone" data-id="${e.id}">${state.done[e.id]?'✓ Đã hoàn thành • Bỏ đánh dấu':'✓ Tôi đã hoàn thành bài này'}</button><div class="pills" style="justify-content:space-between;margin-top:16px"><button class="btn btn-outline btn-sm" data-action="prevExercise">← Bài trước</button><button class="btn btn-outline btn-sm" data-action="nextExercise">Bài tiếp →</button></div></aside><div class="lab-right"><div class="code-window"><div class="editor-toolbar"><strong>● main.c <span style="color:#617ba0">• C11</span></strong><button data-action="loadExample">Ví dụ mẫu</button><button data-action="resetCode">Đặt lại</button><button data-action="copyCode">⧉ Copy</button><button data-action="downloadCode">↓ .c</button></div><div class="editor-wrapper"><div class="line-numbers" id="lineNumbers">1</div><textarea id="codeEditor" class="editor" spellcheck="false" aria-label="Trình soạn thảo C">${esc(getCurrentCode())}</textarea></div></div><div class="panel" style="margin-top:13px;padding:16px"><div style="display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap"><div><strong style="font-size:12px">⌨ Dữ liệu đầu vào (stdin)</strong><div class="muted" style="font-size:10px">Nếu code có scanf hoặc fgets, nhập trước dữ liệu mỗi dòng hoặc cách nhau dấu cách.</div></div><button id="runCodeBtn" class="btn btn-primary" data-action="runCode" ${running?'disabled':''}>${running?'⏳ Đang chạy...':'▶ Chạy code C'}</button></div><textarea class="stdin-box" id="stdinEditor" placeholder="Ví dụ: 5 3">${esc(getCurrentStdin())}</textarea><div style="display:flex;justify-content:space-between;align-items:center;margin:11px 0"><strong style="font-size:11px">● Kết quả chạy <span id="runStatus" class="muted">${esc(outputStatus)}</span></strong><span class="muted" style="font-size:10px">Trình biên dịch trực tuyến Wandbox</span></div><div class="code-window"><pre class="output-content" id="codeOutput">${esc(outputText)}</pre></div><div class="notice" style="margin-top:12px"><span>ⓘ</span><div><strong>Chạy code thật bằng GCC.</strong> Khi nhấn Chạy, mã nguồn và dữ liệu nhập được gửi tới dịch vụ Wandbox bên thứ ba, yêu cầu kết nối internet. Nếu dịch vụ gián đoạn, bạn vẫn có thể tải file .c để chạy với GCC trên máy hoặc dùng <a href="https://www.programiz.com/c-programming/online-compiler/" target="_blank" rel="noopener noreferrer" style="color:var(--blue);text-decoration:underline">Programiz Online Compiler</a>. Đánh dấu hoàn thành là tự đánh giá, không phải chấm bài tự động.</div></div></div></div></div>`;}
+function quizPage(){const questions=DATA.quizzes.map((x,i)=>({...x,index:i})).filter(x=>String(x.module)===quizModule),result=state.quizResults[quizModule],scores=DATA.modules.map(m=>state.quizResults[m.id]).filter(Boolean);return `<h1 class="page-title">Trắc nghiệm kiến thức C</h1><p class="page-sub">68 câu hỏi trên 9 chương. Làm bài rồi nộp để xem đáp án và giải thích ở cuối.</p><div class="filters"><select class="field" id="quizModule">${DATA.modules.map(m=>`<option value="${m.id}" ${quizModule===String(m.id)?'selected':''}>Chương ${m.number} — ${esc(m.title)}</option>`).join('')}</select><span class="pill">${questions.length} câu hỏi</span>${scores.length?`<span class="pill green">Đã thử ${scores.length}/9 chương</span>`:''}</div>${quizRevealed&&result?`<div class="result-banner"><strong>Điểm gần nhất: ${result.correct}/${result.total} câu đúng (${Math.round(result.correct/result.total*100)}%)</strong> · ${result.correct===result.total?'Tuyệt vời!':'Xem giải thích bên dưới để ôn lại kiến thức.'}</div>`:''}<div style="max-width:820px">${questions.map((q,j)=>`<article class="panel quiz-card"><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px"><span class="eyebrow">CÂU ${j+1}/${questions.length}</span><span class="muted" style="font-size:10px">${esc(lesson(q.lesson).title)}</span></div><h3>${esc(q.question)}</h3>${q.options.map((opt,oi)=>`<label class="option ${quizRevealed&&q.answer===oi?'correct':''} ${quizRevealed&&quizAnswers[q.index]===oi&&q.answer!==oi?'wrong':''}"><input type="radio" name="quiz_${q.index}" value="${oi}" data-qindex="${q.index}" ${quizAnswers[q.index]===oi?'checked':''} ${quizRevealed?'disabled':''}><span>${esc(opt)}</span></label>`).join('')}${quizRevealed?`<div class="quiz-feedback">✓ Đáp án: ${esc(q.options[q.answer])}. ${esc(q.explanation)}</div>`:''}</article>`).join('')}<div class="pills" style="margin:20px 0">${!quizRevealed?`<button class="btn btn-primary" data-action="submitQuiz">Nộp bài & xem điểm (${questions.length} câu)</button>`:`<button class="btn btn-primary" data-action="retakeQuiz">↺ Làm lại chương này</button>`}</div></div>`;}
+function videosPage(){return `<h1 class="page-title">Thư viện video bài giảng</h1><p class="page-sub">Video công khai từ các giảng viên độc lập, bao gồm nội dung tiếng Việt và tiếng Anh. Nhấp phát để xem ngay trong website hoặc mở YouTube.</p><div class="video-grid">${DATA.videos.map(v=>`<article class="video-card"><div class="video-thumb" style="background-image:linear-gradient(#10182738,#10182738),url('https://i.ytimg.com/vi/${v.id}/hqdefault.jpg')"><button class="play-btn" data-action="playVideo" data-id="${v.id}" title="Xem video" aria-label="Xem ${esc(v.title)}">▶</button></div><div class="video-card-text"><div class="pills"><span class="pill">${esc(v.language)}</span><span class="pill green">Miễn phí trên YouTube</span><span class="pill">${esc(v.duration)}</span></div><h3>${esc(v.title)}</h3><p>${esc(v.description)}</p><div class="pills"><button class="btn btn-primary btn-sm" data-action="playVideo" data-id="${v.id}">▶ Phát video</button><a class="btn btn-outline btn-sm" href="https://www.youtube.com/watch?v=${v.id}" target="_blank" rel="noopener noreferrer">Mở YouTube ↗</a></div></div></article>`).join('')}</div>${videoActive?`<div class="section-heading" id="videoPlayer"><h2>Đang xem video</h2><button class="btn btn-outline btn-sm" data-action="closeVideo">✕ Đóng</button></div><div class="video-big"><iframe class="video-frame" src="https://www.youtube-nocookie.com/embed/${videoActive}?rel=0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin" title="Video bài giảng C"></iframe></div>`:''}<div class="notice" style="margin-top:17px"><span>▶</span><div><strong>Video được lưu dưới dạng liên kết, không tải lại nội dung.</strong> Cần internet để xem. Bạn có thể bật phụ đề tự động trên YouTube với video tiếng Anh.</div></div>`;}
+function notesPage(){return `<h1 class="page-title">Sổ tay lập trình C</h1><p class="page-sub">Ghi lại công thức, lỗi sai, điều bạn vừa học được. Dữ liệu được lưu trên trình duyệt hiện tại.</p><div class="layout-two"><div class="panel"><h3>📝 Ghi chú của bạn</h3><textarea id="notesEditor" class="notes-area" placeholder="Ví dụ: scanf với double dùng %lf, còn printf dùng %f...">${esc(state.notes.global||'')}</textarea><div style="display:flex;justify-content:space-between;align-items:center;margin-top:10px"><span class="muted" style="font-size:10px">Tự động lưu khi bạn gõ</span><button class="btn btn-outline btn-sm" data-action="export">↓ Sao lưu mọi tiến độ</button></div></div><aside class="panel"><h3>📌 Bảng ghi nhớ nhanh</h3>${[['In văn bản','printf("Hello\\n");'],['Nhập số nguyên','scanf("%d", &n);'],['Nhập số thực','scanf("%lf", &x);'],['Mảng','int a[100];'],['Con trỏ','int *p = &x;'],['Biên dịch GCC','gcc -std=c11 -Wall -Wextra main.c -o main'],['Chạy trên Windows','./main hoặc .\\main.exe']].map(x=>`<div class="activity" style="align-items:flex-start"><div><strong>${esc(x[0])}</strong><small style="font-family:'JetBrains Mono';word-break:break-all">${esc(x[1])}</small></div></div>`).join('')}</aside></div>`;}
+function render(){document.documentElement.dataset.theme=state.theme||'light';renderSidebar();$('#breadcrumb').textContent=({home:'Tổng quan',roadmap:'Lộ trình học',lesson:'Bài giảng',exercises:'Kho bài tập',lab:'Phòng thực hành',quiz:'Trắc nghiệm',videos:'Video bài giảng',notes:'Ghi chú'})[view];const screens={home,roadmap,lesson:lessonPage,exercises:exercisesPage,lab:labPage,quiz:quizPage,videos:videosPage,notes:notesPage};$('#app').innerHTML=screens[view]();if(view==='lab')updateNumbers();}
+function updateNumbers(){const ta=$('#codeEditor'),ln=$('#lineNumbers');if(!ta||!ln)return;ln.textContent=Array.from({length:Math.max(ta.value.split('\n').length,1)},(_,i)=>i+1).join('\n');ln.scrollTop=ta.scrollTop;}
+function download(name,content,type){const blob=new Blob([content],{type});const href=URL.createObjectURL(blob);let a=document.createElement('a');a.href=href;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(href),1000);}
+async function clipboard(text){try{await navigator.clipboard.writeText(text);toast('Đã sao chép vào bộ nhớ tạm');}catch(e){const t=document.createElement('textarea');t.value=text;document.body.appendChild(t);t.select();try{document.execCommand('copy');toast('Đã sao chép mã nguồn');}catch(err){toast('Không sao chép được: hãy chọn mã rồi nhấn Ctrl+C');}t.remove();}}
+async function runCode(){if(running)return;const code=getCurrentCode(),stdin=getCurrentStdin();if(code.length>20000){toast('Code quá dài, tối đa 20.000 ký tự cho mỗi lượt chạy.');return;}
+ running=true;outputStatus='• đang biên dịch';outputText='Đang kết nối trình biên dịch GCC miễn phí...';$('#codeOutput').textContent=outputText;$('#runStatus').textContent=outputStatus;$('#runCodeBtn').textContent='⏳ Đang chạy...';$('#runCodeBtn').disabled=true;
+ try{
+  let compiler='gcc-head-c';
+  if(!compilerListCache){const resp=await fetch('https://wandbox.org/api/list.json',{cache:'force-cache',signal:AbortSignal.timeout(16000)});if(!resp.ok)throw Error('Không lấy được danh sách compiler ('+resp.status+')');compilerListCache=await resp.json();}
+  const cands=compilerListCache.filter(x=>x.language==='C' && x.name&&x.name.startsWith('gcc-'));if(cands.length)compiler=cands.find(x=>x.name==='gcc-head-c')?.name||cands[0].name;
+  const compilerItem=compilerListCache.find(x=>x.name===compiler);const req={compiler,code,stdin};
+  if(compilerItem&&compilerItem['compiler-option-raw'])req['compiler-option-raw']='-std=c11\n-Wall\n-Wextra';
+  const resp=await fetch('https://wandbox.org/api/compile.json',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(req),signal:AbortSignal.timeout(30000)});
+  if(!resp.ok)throw Error('Máy chủ trả lỗi HTTP '+resp.status);
+  const result=await resp.json();
+  const compilerErr=String(result.compiler_error||'');const compilerOut=String(result.compiler_output||'');const programOut=String(result.program_output||'');const programErr=String(result.program_error||'');
+  let parts=[];if(compilerOut.trim())parts.push('[Thông báo biên dịch]\n'+compilerOut);if(compilerErr.trim())parts.push('[Lỗi/cảnh báo biên dịch]\n'+compilerErr);if(programOut.trim())parts.push('[stdout]\n'+programOut);if(programErr.trim())parts.push('[stderr]\n'+programErr);
+  if(result.signal)parts.push('[Tín hiệu dừng] '+result.signal);
+  outputText=parts.join('\n\n')||'(Chương trình không in gì ra màn hình)';outputStatus=compilerErr.trim()||result.status && result.status!=='0'?'• kiểm tra lỗi':'• đã chạy';
+ }catch(err){outputText='Không thể sử dụng dịch vụ biên dịch online lúc này.\n\nChi tiết: '+String(err.message||err)+'\n\nBạn có thể tải tệp .c và chạy bằng GCC trên máy hoặc dán code vào Programiz: https://www.programiz.com/c-programming/online-compiler/';outputStatus='• lỗi kết nối';}
+ finally{running=false;const box=$('#codeOutput');if(box)box.textContent=outputText;const st=$('#runStatus');if(st)st.textContent=outputStatus;const btn=$('#runCodeBtn');if(btn){btn.textContent='▶ Chạy code C';btn.disabled=false;}}
+}
+function toggleSidebar(open){const s=$('#sidebar');s.classList.toggle('open',open);$('#backdrop').classList.toggle('open',open);}
+function exportData(){download('c-academy-tien-do.json',JSON.stringify({type:'c-academy-progress',version:1,exportedAt:new Date().toISOString(),data:state},null,2),'application/json;charset=utf-8');toast('Đã xuất bản sao tiến độ.');}
+async function importData(file){if(!file||file.size>3000000){toast('File sao lưu không hợp lệ hoặc quá lớn.');return;}try{const obj=JSON.parse(await file.text());if(obj.type!=='c-academy-progress'||!obj.data||typeof obj.data!=='object')throw Error('Sai định dạng');if(!confirm('Khôi phục bản sao sẽ thay thế tiến độ và code đang lưu trong trình duyệt này. Tiếp tục?'))return;state={...defaults,...obj.data};save();render();toast('Đã khôi phục tiến độ học.');}catch(e){toast('Không thể nhập file: '+e.message);}}
+document.body.addEventListener('click',async ev=>{const target=ev.target.closest('[data-action]');if(!target)return;const action=target.dataset.action;const id=target.dataset.id;switch(action){
+case 'view':go(target.dataset.view);toggleSidebar(false);break;
+case 'sidebar':toggleSidebar(!$('#sidebar').classList.contains('open'));break;
+case 'theme':state.theme=state.theme==='dark'?'light':'dark';save();render();break;
+case 'openModule':roadmapSelected=String(target.dataset.module);go('roadmap');break;
+case 'lesson':openLesson(target.dataset.lesson);toggleSidebar(false);break;
+case 'exercise':openExercise(id);toggleSidebar(false);break;
+case 'toggleLearn':state.learned[target.dataset.lesson]=!state.learned[target.dataset.lesson];save();render();toast(state.learned[target.dataset.lesson]?'Đã hoàn thành bài học!':'Đã bỏ đánh dấu bài học.');break;
+case 'toggleDone':state.done[id]=!state.done[id];save();render();toast(state.done[id]?'Tốt lắm! Đã ghi nhận bài tập.':'Đã bỏ đánh dấu hoàn thành.');break;
+case 'hint':hintVisible=!hintVisible;render();break;
+case 'nextExercise':{const idx=DATA.exercises.findIndex(e=>e.id===activeExercise);openExercise(DATA.exercises[Math.min(idx+1,DATA.exercises.length-1)].id);break;}
+case 'prevExercise':{const idx=DATA.exercises.findIndex(e=>e.id===activeExercise);openExercise(DATA.exercises[Math.max(idx-1,0)].id);break;}
+case 'loadExample':if(confirm('Nạp ví dụ lý thuyết vào trình soạn thảo? Code bài tập hiện tại vẫn có thể lưu nếu bạn không đặt lại.')){state.drafts[activeExercise]=lesson(activeLesson).code;save();render();toast('Đã nạp code ví dụ từ bài giảng.');}break;
+case 'resetCode':if(confirm('Xóa nội dung đang viết cho bài tập này và tạo lại mẫu trống?')){delete state.drafts[activeExercise];save();render();toast('Đã đặt lại mã nguồn.');}break;
+case 'exampleCopy':clipboard(lesson(Number(target.dataset.lesson)).code);break;
+case 'copyCode':clipboard(getCurrentCode());break;
+case 'downloadCode':download(activeExercise.toLowerCase()+'.c',getCurrentCode(),'text/x-c;charset=utf-8');toast('Đã tải file .c');break;
+case 'runCode':runCode();break;
+case 'moreExercises':exerciseLimit+=24;$('#exerciseResults').innerHTML=exerciseCards();break;
+case 'export':exportData();break;
+case 'import':$('#importFile').click();break;
+case 'submitQuiz':{const qs=DATA.quizzes.map((q,i)=>({...q,index:i})).filter(x=>String(x.module)===quizModule);const missing=qs.filter(q=>quizAnswers[q.index]===undefined).length;if(missing && !confirm(`Bạn chưa trả lời ${missing} câu. Vẫn muốn nộp?`))break;const correct=qs.filter(q=>quizAnswers[q.index]===q.answer).length;state.quizResults[quizModule]={correct,total:qs.length,date:new Date().toISOString()};quizRevealed=true;save();render();window.scrollTo({top:0,behavior:'smooth'});toast('Đã chấm bài trắc nghiệm.');break;}
+case 'retakeQuiz':quizAnswers={};quizRevealed=false;render();break;
+case 'playVideo':videoActive=id;render();setTimeout(()=>$('#videoPlayer')?.scrollIntoView({behavior:'smooth',block:'start'}),30);break;
+case 'closeVideo':videoActive='';render();break;
+}});
+document.body.addEventListener('input',ev=>{const t=ev.target;if(t.id==='codeEditor'){state.drafts[activeExercise]=t.value;save();updateNumbers();}if(t.id==='stdinEditor'){state.stdin[activeExercise]=t.value;save();}if(t.id==='notesEditor'){state.notes.global=t.value;save();}if(t.id==='exerciseSearch'){exerciseSearch=t.value;exerciseLimit=18;$('#exerciseResults').innerHTML=exerciseCards();}});
+document.body.addEventListener('change',ev=>{const t=ev.target;if(t.id==='exerciseModule'){exerciseModule=t.value;exerciseLimit=18;$('#exerciseResults').innerHTML=exerciseCards();}if(t.id==='exerciseDifficulty'){exerciseDifficulty=t.value;exerciseLimit=18;$('#exerciseResults').innerHTML=exerciseCards();}if(t.id==='roadmapModule'){roadmapSelected=t.value;render();}if(t.id==='quizModule'){quizModule=t.value;quizAnswers={};quizRevealed=false;render();}if(t.id==='importFile')importData(t.files?.[0]);if(t.dataset.qindex!==undefined)quizAnswers[Number(t.dataset.qindex)]=Number(t.value);});
+document.body.addEventListener('keydown',ev=>{const t=ev.target;if(t.id==='codeEditor'&&ev.key==='Tab'){ev.preventDefault();const a=t.selectionStart,b=t.selectionEnd;t.setRangeText('    ',a,b,'end');state.drafts[activeExercise]=t.value;save();updateNumbers();}if((t.dataset.action==='openModule'||t.dataset.action==='lesson'||t.dataset.action==='exercise')&&(ev.key==='Enter'||ev.key===' ')){ev.preventDefault();t.click();}});
+document.body.addEventListener('scroll',ev=>{if(ev.target.id==='codeEditor')updateNumbers();},true);
+$('#globalSearch').addEventListener('keydown',ev=>{if(ev.key==='Enter'){exerciseSearch=ev.target.value;exerciseModule='all';exerciseDifficulty='all';exerciseLimit=18;go('exercises');}});
+$('#backdrop').addEventListener('click',()=>toggleSidebar(false));
+document.addEventListener('keydown',ev=>{if((ev.ctrlKey||ev.metaKey)&&ev.key.toLowerCase()==='s'&&view==='lab'){ev.preventDefault();save();toast('Code đã được lưu.');}if((ev.ctrlKey||ev.metaKey)&&ev.key.toLowerCase()==='k'){ev.preventDefault();$('#globalSearch').focus();}});
+render();
+</script>
+</body>
+</html>
